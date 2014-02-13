@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{A87FF069-A1B9-4AD6-924F-AEA2339E7C8D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ComptaAna.net</RootNamespace>
+    <AssemblyName>ComptaAna.net</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ComptaAna.net.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ComptaAna.net.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="a6tm.Framework, Version=4.0.0.5, Culture=neutral, PublicKeyToken=77e64a565e6f6d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\a6tm.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet, Version=33.3.30.1000, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Obout.Ajax.UI, Version=2.12.919.6, Culture=neutral, PublicKeyToken=24f3c5cea456f322, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\Obout.Ajax.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Calendar2_Net, Version=3.0.1.0, Culture=neutral, PublicKeyToken=b114d8766feff9ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\obout_Calendar2_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_ComboBox, Version=4.0.8.0, Culture=neutral, PublicKeyToken=8921cd007946710d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\obout_ComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Interface, Version=4.0.10.0, Culture=neutral, PublicKeyToken=d5dff6913a9d6649, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\obout_Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activite\ReleveActivite.aspx.designer.vb">
+      <DependentUpon>ReleveActivite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activite\ReleveActivite.aspx.vb">
+      <DependentUpon>ReleveActivite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionFiliale.aspx.designer.vb">
+      <DependentUpon>GestionFiliale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionFiliale.aspx.vb">
+      <DependentUpon>GestionFiliale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionPoste.aspx.designer.vb">
+      <DependentUpon>GestionPoste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionPoste.aspx.vb">
+      <DependentUpon>GestionPoste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionPrixQualifTypeAffaire.aspx.designer.vb">
+      <DependentUpon>GestionPrixQualifTypeAffaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionPrixQualifTypeAffaire.aspx.vb">
+      <DependentUpon>GestionPrixQualifTypeAffaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionService.aspx.designer.vb">
+      <DependentUpon>GestionService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionService.aspx.vb">
+      <DependentUpon>GestionService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionTVA.aspx.designer.vb">
+      <DependentUpon>GestionTVA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionTVA.aspx.vb">
+      <DependentUpon>GestionTVA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionTypeProduit.aspx.designer.vb">
+      <DependentUpon>GestionTypeProduit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionTypeProduit.aspx.vb">
+      <DependentUpon>GestionTypeProduit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+<<<<<<< .mine
+    <Compile Include="Gestion\Affaire\AffaireFacturation.aspx.designer.vb">
+      <DependentUpon>AffaireFacturation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFacturation.aspx.vb">
+      <DependentUpon>AffaireFacturation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+=======
+    <Compile Include="Administration\RIB.aspx.designer.vb">
+      <DependentUpon>RIB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\RIB.aspx.vb">
+      <DependentUpon>RIB.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFacturation.aspx.designer.vb">
+      <DependentUpon>AffaireFacturation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFacturation.aspx.vb">
+      <DependentUpon>AffaireFacturation.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+>>>>>>> .r10285
+    <Compile Include="Gestion\Affaire\AffaireFacture.aspx.designer.vb">
+      <DependentUpon>AffaireFacture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFacture.aspx.vb">
+      <DependentUpon>AffaireFacture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFactureDetails.aspx.designer.vb">
+      <DependentUpon>AffaireFactureDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFactureDetails.aspx.vb">
+      <DependentUpon>AffaireFactureDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFacturesListe.aspx.designer.vb">
+      <DependentUpon>AffaireFacturesListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireFacturesListe.aspx.vb">
+      <DependentUpon>AffaireFacturesListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireInserer.aspx.designer.vb">
+      <DependentUpon>AffaireInserer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireInserer.aspx.vb">
+      <DependentUpon>AffaireInserer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireLister.aspx.designer.vb">
+      <DependentUpon>AffaireLister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireLister.aspx.vb">
+      <DependentUpon>AffaireLister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireModifier.aspx.designer.vb">
+      <DependentUpon>AffaireModifier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireModifier.aspx.vb">
+      <DependentUpon>AffaireModifier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireProduits.aspx.designer.vb">
+      <DependentUpon>AffaireProduits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireProduits.aspx.vb">
+      <DependentUpon>AffaireProduits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireSousAffaireListe.aspx.designer.vb">
+      <DependentUpon>AffaireSousAffaireListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire\AffaireSousAffaireListe.aspx.vb">
+      <DependentUpon>AffaireSousAffaireListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Catalogue.aspx.designer.vb">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Catalogue.aspx.vb">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Client\ClientListe.aspx.designer.vb">
+      <DependentUpon>ClientListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Client\ClientListe.aspx.vb">
+      <DependentUpon>ClientListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Client\ClientModification.aspx.designer.vb">
+      <DependentUpon>ClientModification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Client\ClientModification.aspx.vb">
+      <DependentUpon>ClientModification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeDroit.aspx.designer.vb">
+      <DependentUpon>EmployeDroit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeDroit.aspx.vb">
+      <DependentUpon>EmployeDroit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeCout.aspx.designer.vb">
+      <DependentUpon>EmployeCout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeCout.aspx.vb">
+      <DependentUpon>EmployeCout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeDroit.aspx.designer.vb">
+      <DependentUpon>EmployeDroit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeDroit.aspx.vb">
+      <DependentUpon>EmployeDroit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeLister.aspx.designer.vb">
+      <DependentUpon>EmployeLister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeLister.aspx.vb">
+      <DependentUpon>EmployeLister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeModifier.aspx.designer.vb">
+      <DependentUpon>EmployeModifier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Employe\EmployeModifier.aspx.vb">
+      <DependentUpon>EmployeModifier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\GestionDefault.aspx.designer.vb">
+      <DependentUpon>GestionDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\GestionDefault.aspx.vb">
+      <DependentUpon>GestionDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Statistiques\StatCoutsSalariaux.aspx.designer.vb">
+      <DependentUpon>StatCoutsSalariaux.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\StatCoutsSalariaux.aspx.vb">
+      <DependentUpon>StatCoutsSalariaux.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistiques\StatEmployeService.aspx.designer.vb">
+      <DependentUpon>StatEmployeService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\StatEmployeService.aspx.vb">
+      <DependentUpon>StatEmployeService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistiques\StatistiquesGenerales.aspx.designer.vb">
+      <DependentUpon>StatistiquesGenerales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\StatistiquesGenerales.aspx.vb">
+      <DependentUpon>StatistiquesGenerales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistiques\StatTypeProduit.aspx.designer.vb">
+      <DependentUpon>StatTypeProduit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\StatTypeProduit.aspx.vb">
+      <DependentUpon>StatTypeProduit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Commun\CConfiguration.vb" />
+    <Compile Include="SiteMaster.Master.designer.vb">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMaster.Master.vb">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Commun\CSession.vb" />
+    <Compile Include="_Commun\Droit.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Commun\modEnum.vb" />
+    <Compile Include="_Commun\modFonctions.vb" />
+    <Compile Include="_Commun\RecherchAffaire.vb" />
+    <Compile Include="_dev\JL.aspx.designer.vb">
+      <DependentUpon>JL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="_dev\JL.aspx.vb">
+      <DependentUpon>JL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_dev\MG.aspx.designer.vb">
+      <DependentUpon>MG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="_dev\MG.aspx.vb">
+      <DependentUpon>MG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_dev\YB.aspx.designer.vb">
+      <DependentUpon>YB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="_dev\YB.aspx.vb">
+      <DependentUpon>YB.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Activite\ReleveActivite.aspx" />
+    <Content Include="Administration\GestionFiliale.aspx" />
+    <Content Include="Administration\GestionPoste.aspx" />
+    <Content Include="Administration\GestionPrixQualifTypeAffaire.aspx" />
+    <Content Include="Administration\GestionService.aspx" />
+    <Content Include="Administration\GestionTVA.aspx" />
+    <Content Include="Administration\GestionTypeProduit.aspx" />
+<<<<<<< .mine
+    <Content Include="App_Themes\ComptaAna\Design\barre0.png" />
+    <Content Include="App_Themes\ComptaAna\Design\barre100.png" />
+    <Content Include="App_Themes\ComptaAna\Design\barre25.png" />
+    <Content Include="App_Themes\ComptaAna\Design\barre50.png" />
+    <Content Include="App_Themes\ComptaAna\Design\barre75.png" />
+=======
+    <Content Include="Administration\RIB.aspx" />
+>>>>>>> .r10285
+    <Content Include="App_Themes\ComptaAna\Design\Body_bg.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Body_login.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Body_login_vide.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Body_login_vide2.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Body_origine.jpg" />
+    <Content Include="App_Themes\ComptaAna\Design\Btn.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Btn_login.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Btn_onglet.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Facture_bg.png" />
+    <Content Include="App_Themes\ComptaAna\Design\GridView_header.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\GridView_row.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Header.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_affaire.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_affaire_depassement.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_affaire_depassement2.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_affaire_terminee.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_affaire_terminee_depassement.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_ajouter.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_analyses.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_cross.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_datePicker.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_Excel.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_facture.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_folder.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_modifier.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_supprimer.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Icon_tick.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Logo_Axe.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Logo_Axone.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Logo_ComptaAna.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Logo_ComptaAna_a.ico" />
+    <Content Include="App_Themes\ComptaAna\Design\Logo_ComptaAna_a.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Logo_LRQA.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_bg.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_bg.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_bg_hover.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_bg_hover.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_item_bg.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_popup.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_popup.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_sep.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_simple_bg.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_simple_bg.png" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_simple_bg_hover.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_simple_bg_selected.gif" />
+    <Content Include="App_Themes\ComptaAna\Design\Menu_simple_sep.gif" />
+    <Content Include="App_Themes\ComptaAna\Style\design.css" />
+    <Content Include="Gestion\Affaire\AffaireFacturation.aspx" />
+    <Content Include="Gestion\Affaire\AffaireFacture.aspx" />
+    <Content Include="Gestion\Affaire\AffaireFactureDetails.aspx" />
+    <Content Include="Gestion\Affaire\AffaireFacturesListe.aspx" />
+    <Content Include="Gestion\Affaire\AffaireInserer.aspx" />
+    <Content Include="Gestion\Affaire\AffaireLister.aspx" />
+    <Content Include="Gestion\Affaire\AffaireModifier.aspx" />
+    <Content Include="Gestion\Affaire\AffaireProduits.aspx" />
+    <Content Include="Gestion\Affaire\AffaireSousAffaireListe.aspx" />
+    <Content Include="Gestion\Catalogue.aspx" />
+    <Content Include="Gestion\Client\ClientListe.aspx" />
+    <Content Include="Gestion\Client\ClientModification.aspx" />
+    <Content Include="Gestion\Employe\EmployeDroit.aspx" />
+    <Content Include="Gestion\Employe\EmployeCout.aspx" />
+    <Content Include="Gestion\Employe\EmployeDroit.aspx" />
+    <Content Include="Gestion\Employe\EmployeLister.aspx" />
+    <Content Include="Gestion\Employe\EmployeModifier.aspx" />
+    <Content Include="Gestion\GestionDefault.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Statistiques\StatCoutsSalariaux.aspx" />
+    <Content Include="Statistiques\StatEmployeService.aspx" />
+    <Content Include="Statistiques\StatistiquesGenerales.aspx" />
+    <Content Include="Statistiques\StatTypeProduit.aspx" />
+    <Content Include="_dev\JL.aspx" />
+    <Content Include="_dev\MG.aspx" />
+    <Content Include="_dev\YB.aspx" />
+    <Content Include="_References\AjaxPro.2.dll" />
+    <Content Include="_References\ephtmltopdf.dll" />
+    <Content Include="_References\GemBox.Spreadsheet.dll" />
+    <Content Include="_References\Syncfusion.Core.dll" />
+    <Content Include="_References\Syncfusion.DocIO.Base.dll" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="SiteMaster.Master" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.sitemap" />
+    <None Include="Upload\Factures\2013\4618.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Upload\Bon de commande\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComptaAna.Business\ComptaAna.Business.vbproj">
+      <Project>{B60D5D41-F185-4DA0-97B5-D7BEA6525DC2}</Project>
+      <Name>ComptaAna.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60231</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://ComptaAnaV2</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

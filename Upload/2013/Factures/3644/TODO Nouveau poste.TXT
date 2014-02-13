@@ -1,0 +1,52 @@
+Logiciels à installer :
+
+Environnement de développement :
+
+Framework .net
+Silverlight (WCF RIA Services ToolKit April 2011 et WCF RIA Services V1.0 SP1) 
+SQL Server 2008 R2
+Visual Studio 2010
+Fiddler
+Filezilla
+Tortoise SVN
+Telerik RadControls
+Gembox
+Microsoft Virtual PC
+
+Divers :
+
+Adobe (flash, ...)
+Chrome
+Firefox
+IE 10
+Safari
+Office (2007 au minimum)
+Access 2003
+Thunderbird
+Notepad++
+PSPad
+Skype
+TeamViewer
+Tree Size
+WinRAR
+PDFFilter (pour que Indexing Service scanne et reconnaisse les pdf)
+
+Perso :
+
+iCloud
+iTunes
+Spotify
+
+Actions / Paramétrage :
+
+Transfert BDD (Compta, Axone) sur SQL Server
+2 projets Axone et Compta à mettre en place sur Visual Studio
+IIS (site axone local, compta local), pools d'application associés
+Filezilla (comptes FTP à transférer)
+SVN (compte SVN à enregistrer)
+Explorateur windows : "D:\_Travail", remettre tous les projets
+Comptes TSE
+Virtual PC : réinstaller machine IE6
+Voir avec Guillaume : Outlook (import .pst, 2 comptes y.bleuzen et axone, régles), VPN, Antivirus, ancienne compta ?
+Firefox : fireshot
+Favoris Chrome à transférer

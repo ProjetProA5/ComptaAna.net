@@ -1,0 +1,1235 @@
+﻿/****************************
+          Page
+*****************************/
+body   
+{
+    background-image:url('../Design/Body.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+
+   
+    /*-webkit-background-size:contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;*/
+	
+    /*font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    padding: 0px;
+    color: #696969;
+    font-size:0.9em;*/
+    
+    padding: 0;f
+    margin: 0;
+    margin: auto;
+    font-family: verdana, sans-serif;
+    font-size: 0.9em;
+    color: #3e3d40;
+}
+
+.content
+{   
+    margin:5px;
+}
+.contenu
+{
+    /*margin-left:19%;*/
+   
+
+}
+
+a:link, a:visited
+{
+    color: #FFFFFF;
+}
+
+a:hover
+{
+    color: #ABB2BF;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/****************************
+          HEADINGS
+*****************************/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 1.5em;
+    COLOR: #513f9a;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Verdana;
+   
+}
+
+.h1bis
+{
+     FONT-WEIGHT: bold;
+    FONT-SIZE: 1.5em;
+    COLOR: #513f9a;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Verdana; 
+    margin-left: 380px;   
+}
+
+.facturelisteh1
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 1.5em;
+    COLOR: #513f9a;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Verdana;
+    margin-left: 20px;
+}
+
+
+
+
+h2
+{   FONT-WEIGHT: bold;/*mettre en gras*/
+    FONT-SIZE: 1.5em;/*taille de la police*/
+    COLOR: #314b7d;/* couleur de la police*/
+    FONT-STYLE: normal;
+    FONT-FAMILY: Verdana, Arial;/* police utilisé*/
+    
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+
+.page
+{
+    min-height:600px;
+    margin: 0px auto 0px auto;
+}
+
+
+.header
+{
+    position: relative;
+    background:url('../Design/Header.png') left center no-repeat;
+    color:Blue;
+    margin: 0px;
+    height: 85px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: Blue;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+/****************************
+          menu
+*****************************/
+
+ul.menu
+{
+    padding: 0;
+    margin: 0;
+    height: 51px;
+
+    display: block;
+    list-style: none;
+    margin: auto;
+    clear: both;
+    background: url(../Images/menu_last.png) right top no-repeat;
+    overflow:hidden;
+}
+div.menu 
+{
+    padding: 0;
+    margin: 0;
+    height: 51px;
+    width:100%;
+    min-width:1003px;
+    margin: auto;
+    clear: both;
+    display: block;
+   /* background: url(../Images/menu_first.png) left top no-repeat;*/
+    list-style: none;
+    background: url(../Images/menu_last.png) left top no-repeat;
+    overflow:hidden;
+}
+
+.primaryStaticMenu
+{
+    margin-top: 15px;
+    margin-left: 0.5%;
+    /*margin-left: 5px;*/
+    width:99%;   
+    height: 110%;
+    display: inline-block;
+    background-image : url('../Design/menu_last1.png');
+    background-repeat: repeat-x;
+    background-position: top right;
+    /*border-left: solid 1px #c2d1db;
+    border-right: solid 1px #c2d1db;*/  
+    /*arrondi*/
+    -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius:10px;/* arrondi pour firefox*/
+	/* Borders */
+	border: 1px solid #002232;
+	-moz-box-shadow:inset 0px 0px 1px #edf9ff;
+	-webkit-box-shadow:inset 0px 0px 1px #edf9ff;
+    color: #000080 !important;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: bottom;
+}
+.primaryStaticMenuItem
+{
+   width:100%;   
+   height: 100%;
+   font-size: 15px !important;
+   font-family: Verdana;
+   font-weight: bold;
+   color: #FFFFFF/*#000080*/ !important;
+   padding:0.5em 0.5em 0.5em 0.5em;
+   /*background-image : url('../Design/menu_last.png');
+   -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;*/
+}
+.primaryStaticHover
+{
+   /*background-image : url('../Design/Menu_bg_hover.png');*/
+   background-image : url('../Design/menu.png');
+   background:#62c8ea;
+   -moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+   /*moz-border-radius: 5px;*/
+	/*-webkit-border-radius: 5px;*/
+}
+
+.primaryDynamicMenu
+{     
+   background: url('../Design/Menuhover.png') left top repeat; 
+   -moz-border-radius: 2px 5px 5px 5px;
+	-webkit-border-radius:2px 5px 5px 5px;
+	border-radius:2px 5px 5px 5px;
+   /*background-color: #E0ECF1 !important;   */         
+   /*border: solid 1px #ccc; */
+}  
+.primaryDynamicMenuItem
+{
+   width: 100%;
+   color: black !important;
+   font-family verdana;
+   padding: 0.5em 0.5em 0.5em 0.5em;      
+}    
+.primaryDynamicHover
+{
+   color: red !important;
+   /*background: #8BB8CB;*/
+}
+
+.SimpleStaticMenu
+{
+    margin-top: 0.8%; 
+    margin-left: 0.7%;
+    width: 98%; 
+    height: 30px;
+    display: block;
+    background:url('../Design/barre.png')bottom left repeat-x;
+    background-position:bottom;
+    /*background-color: #3399CC;*/
+    /*border-left: solid 1px #E8E8E8;
+    border-right: solid 1px #E8E8E8;*/
+    color: #666666 !important;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: bottom;
+}
+.SimpleStaticMenuItem /*****************************************************************************************/
+{
+   border: 0px;
+   width:100%;   
+   height: 30px;
+    border-left: solid 1px #3399CC;
+    border-right: solid 1px #3399CC;
+    border-top:solid 1px #3399CC;
+    border-collapse:collapse;
+   font-size: 13px !important;
+   font-family: Verdana;
+   font-weight: normal;
+   color: #000033 !important;
+   padding:0.5em 0.5em 0.5em 0.5em;
+}
+/*---------------------------------------------------------------------------------*/
+.legende
+{    
+    height: 50px;
+    margin-bottom: -15px;
+    margin-left:15px;
+    font-size: 20px;
+    text-align:center;
+    background: url('../Design/cartouche.png')left repeat-x;
+   background-position: 0px 0px;
+   -moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	color:White;
+}
+.legende2
+{    
+    height: 50px;
+    margin-left: 15%;
+    margin-right: 15%;   
+    margin-bottom: -15px;
+    font-size: 20px;
+    text-align:center;
+    background: url('../Design/cartouche.png')left top repeat-x;
+   background-position: 0px 0px;
+   -moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	color:White;
+}
+.legende3
+{    
+    height: 50px;
+    margin-left: 10%;
+    margin-right: 10%;   
+    margin-bottom: -15px;
+    font-size: 20px;
+    text-align:center;
+    background: url('../Design/cartouche.png')left top repeat-x;
+   background-position: 0px 0px;
+   -moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	color:White;
+}
+.couleurTextRecherche
+{ color: White;
+}
+.recherche
+{   
+    opacity: 0.90;
+    margin-left:15px;
+    border:0px;
+    background:url('../Design/barreOnglet.png') ;
+    -moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+.recherche2
+{   
+    margin-left: 15%;
+    margin-right: 15%;  
+    border:0px;
+    background:url('../Design/barreOnglet.png') ;
+    -moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+.recherche3
+{   
+    margin-left: 10%;
+    margin-right: 10%;  
+    border:0px;
+    background:url('../Design/barreOnglet.png') ;
+    -moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+.testbis
+{
+    background:url('../Design/mrBleu.jpg') left bottom repeat-y;
+   height:auto;
+    
+    padding-left: 10px;
+    padding-bottom: 15px;
+    display: block;
+}
+.test2
+{   vertical-align:middle;
+/*margin-bottom: 30px;*/
+}
+
+.test
+{    
+    /*margin-bottom: 100px;*/
+    
+}
+.vista
+{   
+    max-height: 900px;
+    margin-right:5px;
+    width:auto;
+    height: auto;
+    -moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+.SimpleStaticSelected
+{
+    background-position:top;
+    margin-top:-1px;
+    font-weight: bold !important;
+    color:white !important;
+    background-color: #3399CC;
+}
+.SimpleStaticHover
+{
+    /*font-weight: bold !important;*/
+     margin-top:-1px;
+    background-position:top;
+    color: white !important;
+    background-color: #3399CC;
+}
+
+/****************************
+        Page connection
+*****************************/
+.bodyLogin
+{
+    background:url('../Design/Body_login_vide2.png') left top no-repeat;
+}
+
+.connection
+{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.connection .tbUser
+{
+    position: absolute;
+    width: 175px;
+    font-family: verdana;
+    font-size: 12px;
+    background-color: white;
+    border: 0;
+    margin-top: 313px;
+    margin-left: 296px;
+}
+
+.connection .tbMdp
+{
+    position: absolute;
+    width: 175px;
+    background-color: white;
+    border: 0;
+    margin-top: 355px;
+    margin-left: 296px;
+}
+
+.connection .cbPersist
+{
+    position: absolute;
+    margin-top: 387px;
+    margin-left: 295px;
+}
+
+.connection .btnLogin
+{
+    width: 95px;
+    position: absolute;
+    margin-top: 415px;
+    margin-left: 420px;
+    background-image: url('../Design/Btn_login.png');
+    background-position: -8px -14px;
+}
+
+.connection .btnLogin:hover
+{
+    position: absolute;
+    margin-top: 415px;
+    margin-left: 420px;
+    background-image: url('../Design/Btn_login.png');
+    background-position: -8px -53px;
+}
+
+.connection .failureUser
+{
+    position: absolute;
+    margin-top: 425px;
+    margin-left: 175px;
+    color: Red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.connection .failureMDP
+{
+    position: absolute;
+    margin-top: 435px;
+    margin-left: 175px;
+    color: Red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.connection .failureLogin
+{
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 260px;
+    color: Red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.lblDeco /* label de déconnexion*/
+{ 
+     font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    /*height: 22px;*/
+    /*line-height: 22px;*/
+    color: #204b92;
+    /*display: block;*/
+    /*margin-left:15%;*/
+    margin-left:200px;
+}
+
+.btnDeconnexion
+{
+    margin-left:200px;
+    background: url(../Design/croix_grise.gif) no-repeat;
+    background-position: 120px 0px;
+    cursor: pointer;
+    /*width: 200px;*/
+    /*text-align: left;*/
+    /* display: block;*/
+    /*font-size: 9px;*/
+    /*color: #595959;*/
+    /*border: 0;*/
+}
+
+
+
+.btnDeconnexion:hover
+{
+    background: url(../Design/croix_grise.gif) right bottom no-repeat;
+}
+.btnLoggout
+{
+    /*margin-left:14.2%;*/
+    /* width: 7.7%;*/
+    width: 85px;
+    margin-left:200px;
+    font-size: 11px;
+    color: #595959;
+    background: url(../Design/croix_grise.gif) no-repeat;
+    background-position: 75px 0px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: 0px;
+    border: 0;
+    cursor: pointer;
+    text-decoration:underline;
+    background-color: transparent;
+    /*font-size: 9px;*/
+    /*color: #595959;*/
+    /*border: 0;*/
+    /* color: Blue;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;*/
+    /* overflow:hidden;*/
+    /*text-align: left;*/
+    /* display: block;*/
+}
+
+.btnLoggout:hover
+{   
+    background: url(../Design/croix_grise.gif) no-repeat;
+    background-position: 75px -17px;
+}
+
+/****************************
+        Fil d'ariane
+*****************************/
+.filAriane
+{
+    height: 38px;
+    display: block;
+    clear: both;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.filAriane a
+{
+    color: #4e5766;
+    text-decoration:none;
+}
+
+.filAriane a:hover
+{
+    color: #e75113;
+}
+
+
+/****************************
+       FORM ELEMENTS
+*****************************/
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+
+/****************************
+           Bouton
+*****************************/
+.btn75, .btn90, .btn95, .btn175, .btn225, .btn295, .btnLogin, .btnOnglet
+{
+    font-family: Arial;
+    font-size:11px;
+    color: #4b4b4d;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    height: 35px;
+    line-height: 22px;
+    vertical-align: middle;
+    display: block;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    text-decoration:none;
+    overflow:hidden;
+    background-color: transparent;
+}
+
+.btn75
+{
+    width: 76px;
+    height: 28px;
+    /*background-image: url('../Design/Btn.png');*/
+    background-image: url('../Design/btn75.png');
+    background-position: 3px 2px;
+}
+.btn75:hover
+{
+    width: 76px;
+    height: 28px;
+    background-image: url('../Design/btn75.png');
+    background-position: 3px -40px;
+}
+
+.btn90
+{
+    width: 120px;
+    height: 26px;
+    
+    background-image: url('../Design/btn90.png');
+    background-position: 15px 0px;
+}
+
+.btn90:hover
+{
+    width: 120px;
+    height: 26px;
+    background-image: url('../Design/btn90.png');
+    background-position: 15px -60px;
+}
+
+.btn95
+{
+    width: 120px;
+    height: 26px;
+    background-image: url('../Design/Btn100.png');
+    background-repeat: no-repeat;
+    background-position: 9px 1px;
+}
+
+.btn95:hover
+{
+    width: 120px;
+    height: 26px;
+    background-image: url('../Design/Btn100.png');
+    background-position: 9px -60px;
+}
+
+.btn175
+{
+    width: 175px;
+    height: 26px;
+    background-image: url('../Design/btn175.png');
+    background-position: 0px 0px;
+}
+.btn175:hover
+{
+    width: 175px;
+    height: 26px;
+    background-image: url('../Design/btn175.png');
+    background-position: -1px -125px;
+}
+
+.btn225
+{
+    width: 225px;
+    height: 25px;
+    background-image: url('../Design/btn225.png');
+    background-position: 0px 0px;
+}
+.btn225:hover
+{
+    width: 225px;
+    height: 25px;
+    background-image: url('../Design/btn225.png');
+    background-position: -0px -45px;
+}
+
+.btn295
+{
+    width: 295px;
+    height: 20px;
+    background-image: url('../Design/btn295.png');
+    background-position: -8px -193px;
+}
+.btn295:hover
+{
+    width: 295px;
+    height: 20px;
+    background-image: url('../Design/btn295.png');
+    background-position: -8px -219px;
+}
+
+.btnOnglet
+{
+    font-family: Verdana !important;
+    font-size:13px !important;
+    font-weight: normal !important;
+    width: 120px;
+    height: 35px;
+    background: url('../Design/Btn_onglet.png') left top no-repeat;
+}
+.btnOnglet:hover
+{
+    width: 120px;
+    height: 35px;
+    background: url('../Design/Btn_onglet.png') left bottom no-repeat;
+}
+
+/****************************
+          Gridview
+*****************************/
+
+.Grid
+{
+    border-collapse:collapse;
+    background-color:transparent;
+    border-top: 1px; 
+    border-bottom: 1px;  
+    margin: 5px 0 10px 0;   
+    border-right:1px #4B4B4B;
+    border-left:1px #4B4B4B;
+}
+
+.Grid th
+{
+    color:white;
+    height:27px;
+    background:transparent url('../Design/headerTable.png') left center repeat-x;
+    border: 0px;
+    font-size:11px;
+    border-left: solid 1px #DBDBDB;
+    border-right: solid 1px #DBDBDB;
+   /* AlternatingRowStyle-BackColor="#EDEDED";*/
+}
+.Grid th a
+{
+    color:White;
+    font-size:11px;
+}
+.Grid td
+{
+    color:#323234;
+    border-left: solid 1px #DBDBDB;
+    border-right: solid 1px #DBDBDB;
+    border-top: solid 1px #DBDBDB;
+    border-bottom:solid 1px #DBDBDB;
+    padding:4px 4px 4px 10px;
+    resizable: false;
+}
+.Grid td a
+{
+    color:#323234;
+    text-decoration:none;
+}
+
+.nodeAffaireDepassement
+{
+	color:Red;
+	font-weight: bold;
+}
+
+.nodeAffaireTerminee
+{
+	font-weight: bold;
+	color:#B4B4B4;
+}
+.modalPopup 
+{
+    position:fixed;
+    width:550px;
+    left:50%;
+    top:7%;
+    margin-left:-400px;
+    background-color:White;
+    -moz-box-shadow: 0 0 15px black;
+    -webkit-box-shadow: 0 0 15px black;
+    box-shadow: 0 0 15px black;
+    border-radius:10px;
+    padding:20px;
+    border:solid 1px #888\9; /* hack pour IE 8- */
+}
+/****************************
+          Graph
+*****************************/
+.graph
+{
+    /*margin-left: 20%;*/
+    margin-left: 20px;
+    margin-right:55%;
+}
+.graphField
+{
+    margin-top:-1px;
+    margin-right:10px;
+}
+/****************************
+          ExportREX
+*****************************/
+.ExportREXGAUCHE
+{
+    
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse:collapse;
+    
+    
+}
+.ExportREXGAUCHEBIS
+{
+    
+    border-style:solid;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    border-top-width:0px;
+    border-right-width:0px;
+    border-color:Black;
+    border-collapse:collapse;
+    width:250px;
+    
+}
+
+.ExportREXGAUCHEBORDURE
+{
+    
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:2px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse:collapse;
+    width:250px;
+    
+}
+
+.ExportREXSTJ
+{
+    background-color:#E6B8B7;
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse:collapse;
+}
+.ExportREXICPE
+{
+    background-color:#95B3D7;
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse: collapse;
+}
+
+.ExportREXMDP
+{
+    background-color:#92D050;
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse: collapse;
+}
+
+.ExportREXPORZO
+{
+    background-color:#BFBFBF;
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse: collapse;
+}
+
+.ExportREXTOTAL
+{
+    background-color:#FFFF66;
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:1px;
+    border-color:Black;
+    border-collapse: collapse;
+}
+.ExportREXCONSOLIDE
+{
+    background-color:#F2DCD6;
+    border-style:solid;
+    border-bottom-width:2px;
+    border-left-width:1px;
+    border-top-width:2px;
+    border-right-width:2px;
+    border-color:Black;
+    border-collapse: collapse;
+    
+}
+
+ .ExportREXTD 
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+ .ExportREXTDPAIR
+{
+    background-color:#F2F2F2;
+    border: solid black;
+    border-bottom-width:1px;
+    border-left-width:1px;
+    border-top-width:1px;
+    border-right-width:1px;
+    border-collapse: collapse;
+    width:90px;
+}
+
+ .ExportREXTDIMPAIR
+{
+    background-color:#D8D8D8;
+    border:solid black;
+     border-bottom-width:1px;
+    border-left-width:1px;
+    border-top-width:1px;
+    border-right-width:1px;
+    border-collapse: collapse;
+   width:90px;
+}
+
+ .ExportREXTDPAIRGROSSEBORDURE
+{
+    background-color:#F2F2F2;
+    border: solid black;
+    border-bottom-width:1px;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-right-width:2px;
+    border-collapse: collapse;
+    width:90px;
+}
+
+ .ExportREXTDIMPAIRGROSSEBORDURE
+{
+    background-color:#D8D8D8;
+    border:solid black;
+     border-bottom-width:1px;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-right-width:2px;
+    border-collapse: collapse;
+   width:90px;
+}
+
+
+ .ExportREXTDPAIRDEB
+{
+    background-color:#F2F2F2;
+    border: solid black;
+    border-bottom-width:1px;
+    border-left-width:2px;
+    border-top-width:2px;
+    border-right-width:2px;
+    border-collapse: collapse;
+    width:90px;
+}
+
+ .ExportREXTDPAIRFIN
+{
+    background-color:#D8D8D8;
+    border:solid black;
+     border-bottom-width:2px;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-right-width:2px;
+    border-collapse: collapse;
+   width:90px;
+}
+.tdInvisible
+{
+
+    border:solid black;
+     border-bottom-width:0px;
+    border-left-width:0px;
+    border-top-width:0px;
+    border-right-width:2px;
+    border-collapse: collapse;
+   width:90px;
+
+}
+
+ .ExportREXTDPAIRBIS
+{
+    background-color:#F2F2F2;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+    
+}
+
+ .ExportREXTDIMPAIRBIS
+{
+    background-color:#D8D8D8;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+}
+.ExportREXTable
+{
+    
+    border-collapse: collapse;
+    cellspacing:0px; 
+    cellpadding:0px;
+}
+.ExportTable
+{
+     border: 2px solid black;
+     border-collapse: collapse;
+     cellspacing:0px; 
+    cellpadding:0px;
+}
+.tbSTJ
+{
+    background-color:#E6B8B7;
+    border: 0px solid black;
+    width: 50px;
+    text-align:center;
+}
+
+.tbICPE
+{
+  background-color:#95B3D7;
+  border: 0px solid black;
+  width: 50px;
+  text-align:center;
+}
+
+.tbMDP
+{
+  background-color:#92D050;
+  border: 0px solid black;
+  width: 50px;
+  text-align:center;
+}
+
+.tbPORZO
+{
+  background-color:#BFBFBF;
+  border: 0px solid black;
+  width: 50px;
+  text-align:center;
+}
+
+.tbTOTAL
+{
+  background-color:#FFFF66;
+  border: 0px solid black;
+  width: 50px;
+  text-align:center;
+    
+}
+.tbCONSOLIDE
+{
+  background-color:#F2DCD6;
+  border: 0px solid black;
+  width: 50px;
+  text-align:center; 
+}
+
+.tbClassique
+{
+ 
+  border: 0px solid black;
+  width: 50px;
+  text-align:center;
+}
+.tbPair
+{
+  background-color:#F2F2F2;
+  border: 0px solid black;
+  width: 50px;
+  
+}
+.tbImpair
+{
+  background-color:#D8D8D8;
+  border: 0px solid black;
+   width: 50px;
+  
+}
+.tbPairBis
+{
+  background-color:#F2F2F2;
+  border: 0px solid black;
+  width: 250px;
+  
+}
+.tbImpairBis
+{
+  background-color:#D8D8D8;
+  border: 0px solid black;
+   width: 250px;
+  
+}

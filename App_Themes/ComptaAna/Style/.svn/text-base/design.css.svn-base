@@ -1,0 +1,627 @@
+﻿/****************************
+          Page
+*****************************/
+body   
+{
+    /*background:url('../Design/Body_bg.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;*/
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    padding: 0px;
+    color: #696969;
+    font-size:0.9em;
+}
+
+.content
+{   
+    margin:20px;
+}
+
+a:link, a:visited
+{
+    color: #FFFFFF;
+}
+
+a:hover
+{
+    color: #ABB2BF;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/****************************
+          HEADINGS
+*****************************/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+
+.page
+{
+    min-height:600px;
+    margin: 0px auto 0px auto;
+}
+
+
+.header
+{
+    position: relative;
+    background:url('../Design/Header.png') left center no-repeat;
+    color:Blue;
+    margin: 0px;
+    height: 85px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: Blue;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+/****************************
+          menu
+*****************************/
+.primaryStaticMenu
+{
+    margin-top: 15px;
+    width:100%;   
+    height: 35px;
+    display: inline-block;
+    display:-moz-inline-box;
+    background-image : url('../Design/Menu_bg.png');
+    border-left: solid 1px #c2d1db;
+    border-right: solid 1px #c2d1db;
+    color: #000080 !important;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: bottom;
+}
+.primaryStaticMenuItem
+{
+   width:100%;   
+   height: 100%;
+   font-size: 15px !important;
+   font-family: Verdana;
+   font-weight: bold;
+   color: #000080 !important;
+   padding:0.5em 0.5em 0.5em 0.5em;
+}
+.primaryStaticHover
+{
+   background-image : url('../Design/Menu_bg_hover.png');
+}
+
+.primaryDynamicMenu
+{     
+   background: url('../Design/Menu_item_bg.gif') left top repeat-x; 
+   background-color: #E0ECF1 !important;            
+   border: solid 1px #ccc; 
+}  
+.primaryDynamicMenuItem
+{
+   width: 100%;
+   color: #5C5C5C !important;
+   padding: 0.5em 0.5em 0.5em 0.5em;      
+}    
+.primaryDynamicHover
+{
+   color: white !important;
+   background: #8BB8CB;
+}
+
+.SimpleStaticMenu
+{
+    margin-top: 15px; 
+    width: 100%; 
+    height: 30px;
+    display: block;
+    background-color: #D6EBFF;
+    border-left: solid 1px #E8E8E8;
+    border-right: solid 1px #E8E8E8;
+    color: #666666 !important;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: bottom;
+}
+.SimpleStaticMenuItem
+{
+   border: 0px;
+   width:100%;   
+   height: 30px;
+   font-size: 13px !important;
+   font-family: Verdana;
+   font-weight: normal;
+   color: #000033 !important;
+   padding:0.5em 0.5em 0.5em 0.5em;
+}
+.SimpleStaticSelected
+{
+    font-weight: bold !important;
+    color:white !important;
+    background-color: #000099;
+}
+.SimpleStaticHover
+{
+    font-weight: bold !important;
+    color: white !important;
+    background-color: #000099;
+}
+
+/****************************
+        Page connection
+*****************************/
+.bodyLogin
+{
+    background:url('../Design/Body_login_vide2.png') left top no-repeat;
+}
+
+.connection
+{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.connection .tbUser
+{
+    position: absolute;
+    width: 175px;
+    font-family: verdana;
+    font-size: 12px;
+    background-color: white;
+    border: 0;
+    margin-top: 313px;
+    margin-left: 296px;
+}
+
+.connection .tbMdp
+{
+    position: absolute;
+    width: 175px;
+    background-color: white;
+    border: 0;
+    margin-top: 355px;
+    margin-left: 296px;
+}
+
+.connection .cbPersist
+{
+    position: absolute;
+    margin-top: 387px;
+    margin-left: 295px;
+}
+
+.connection .btnLogin
+{
+    width: 95px;
+    position: absolute;
+    margin-top: 415px;
+    margin-left: 420px;
+    background-image: url('../Design/Btn_login.png');
+    background-position: -8px -14px;
+}
+
+.connection .btnLogin:hover
+{
+    position: absolute;
+    margin-top: 415px;
+    margin-left: 420px;
+    background-image: url('../Design/Btn_login.png');
+    background-position: -8px -53px;
+}
+
+.connection .failureUser
+{
+    position: absolute;
+    margin-top: 425px;
+    margin-left: 175px;
+    color: Red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.connection .failureMDP
+{
+    position: absolute;
+    margin-top: 435px;
+    margin-left: 175px;
+    color: Red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.connection .failureLogin
+{
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 260px;
+    color: Red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btnLoggout
+{
+    color: Blue;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: 0px;
+    border: 0;
+    cursor: pointer;
+    text-decoration:underline;
+    overflow:hidden;
+    background-color: transparent;
+}
+
+.btnLoggout:hover
+{
+    font-weight:bold;
+    text-decoration: none; 
+}
+
+/****************************
+        Fil d'ariane
+*****************************/
+.filAriane
+{
+    height: 38px;
+    display: block;
+    clear: both;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.filAriane a
+{
+    color: #4e5766;
+    text-decoration:none;
+}
+
+.filAriane a:hover
+{
+    color: #e75113;
+}
+
+
+/****************************
+       FORM ELEMENTS
+*****************************/
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+
+/****************************
+           Bouton
+*****************************/
+.btn75, .btn90, .btn95, .btn175, .btn225, .btn295, .btnLogin, .btnOnglet
+{
+    font-family: Arial;
+    font-size:11px;
+    color: #4b4b4d;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    height: 35px;
+    line-height: 22px;
+    vertical-align: middle;
+    display: block;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    text-decoration:none;
+    overflow:hidden;
+    background-color: transparent;
+}
+
+.btn75
+{
+    width: 76px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -1px;
+}
+.btn75:hover
+{
+    width: 76px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -24px;
+}
+
+.btn90
+{
+    width: 105px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -47px;
+}
+
+.btn90:hover
+{
+    width: 105px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -70px;
+}
+
+.btn95
+{
+    width: 107px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -47px;
+}
+
+.btn95:hover
+{
+    width: 107px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -70px;
+}
+
+.btn175
+{
+    width: 186px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -93px;
+}
+.btn175:hover
+{
+    width: 186px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -1px -119px;
+}
+
+.btn225
+{
+    width: 240px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -8px -143px;
+}
+.btn225:hover
+{
+    width: 240px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -8px -167px;
+}
+
+.btn295
+{
+    width: 295px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -8px -193px;
+}
+.btn295:hover
+{
+    width: 295px;
+    height: 20px;
+    background-image: url('../Design/Btn.png');
+    background-position: -8px -219px;
+}
+
+.btnOnglet
+{
+    font-family: Verdana !important;
+    font-size:13px !important;
+    font-weight: normal !important;
+    width: 120px;
+    height: 35px;
+    background: url('../Design/Btn_onglet.png') left top no-repeat;
+}
+.btnOnglet:hover
+{
+    width: 120px;
+    height: 35px;
+    background: url('../Design/Btn_onglet.png') left bottom no-repeat;
+}
+
+/****************************
+          Gridview
+*****************************/
+.Grid
+{
+    border-collapse:collapse;
+    background-color:transparent;
+    border-top: 0px; 
+    border-bottom: 0px;  
+    margin: 5px 0 10px 0;   
+    border-right:0px;
+    border-left:0px;
+}
+
+.Grid th
+{
+    color:white;
+    height:27px;
+    background:transparent url('../Design/GridView_header.gif') left center repeat-x;
+    border: 0px;
+    font-size:11px;
+    border-left: solid 1px #DBDBDB;
+    border-right: solid 1px #DBDBDB;
+}
+.Grid th a
+{
+    color:White;
+    font-size:11px;
+}
+.Grid td
+{
+    color:#323234;
+    border-left: solid 1px #DBDBDB;
+    border-right: solid 1px #DBDBDB;
+    border-top: solid 1px #DBDBDB;
+    border-bottom:solid 1px #DBDBDB;
+    padding:4px 4px 4px 10px;
+    resizable: false;
+}
+.Grid td a
+{
+    color:#323234;
+    text-decoration:none;
+}
+
+.nodeAffaireDepassement
+{
+	color:Red;
+	font-weight: bold;
+}
+
+.nodeAffaireTerminee
+{
+	font-weight: bold;
+	color:#B4B4B4;
+}
+.modalPopup 
+{
+    position:fixed;
+    width:550px;
+    left:50%;
+    top:7%;
+    margin-left:-400px;
+    background-color:White;
+    -moz-box-shadow: 0 0 15px black;
+    -webkit-box-shadow: 0 0 15px black;
+    box-shadow: 0 0 15px black;
+    border-radius:10px;
+    padding:20px;
+    border:solid 1px #888\9; /* hack pour IE 8- */
+}

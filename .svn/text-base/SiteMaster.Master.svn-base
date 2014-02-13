@@ -1,0 +1,55 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteMaster.Master.vb" Inherits="ComptaAna.net.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+     ComptAxe - Axe Environnement
+    </title>
+    <link id="Link1" runat="server" rel="shortcut icon" href="~/App_Themes/ComptaAna/Design/Logo_ComptaAna_a.png" type="image/x-icon"/>
+    <link id="Link2" runat="server" rel="icon" href="~/App_Themes/ComptaAna/Design/Logo_ComptaAna_a.png" type="image/ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+    <body>
+        <form runat="server">
+            <div class="page">
+                    <div id="divBandeau" runat="server" class="header">
+                        <h1></h1>
+                        <asp:Label ID="lblPreprod" runat="server" ForeColor="Red" Visible="false"></asp:Label><br />
+                        <br/>
+                         <div >
+                             <asp:Label ID="lblConnecte" runat="server" Visible="false" CssClass="lblDeco" ></asp:Label>
+                             <br/>
+                             <asp:Button ID="LogoutButton" CssClass="btnLoggout" runat="server" Text="Déconnexion." CausesValidation="false" />
+                              
+                        </div>
+                           
+                    </div>
+                <div>
+                    <div id="menu">
+                        <asp:Menu   id="MainMenu" runat="server" Orientation="Horizontal" 
+                            StaticEnableDefaultPopOutImage="false"  StaticDisplayLevels="1" MaximumDynamicDisplayLevels="1"
+                            StaticBottomSeparatorImageUrl="~/App_Themes/ComptaAna/Design/Menu_sep.gif">
+                            <StaticMenuStyle CssClass="primaryStaticMenu"/>
+                             <StaticMenuItemStyle CssClass="primaryStaticMenuItem" />
+                           <DynamicMenuStyle CssClass="primaryDynamicMenu" />     
+                           <StaticHoverStyle CssClass="primaryStaticHover"/>
+                            <DynamicMenuItemStyle CssClass="primaryDynamicMenuItem"/>
+                            <DynamicHoverStyle CssClass="primaryDynamicHover"/>
+                        </asp:Menu>
+                    </div>
+                    <div class="filAriane">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server" />
+                    </div>
+                    <asp:ContentPlaceHolder ID="Content" runat="server">
+                    </asp:ContentPlaceHolder>
+               </div>
+
+             </div>
+         </form>
+      </body>
+</html>

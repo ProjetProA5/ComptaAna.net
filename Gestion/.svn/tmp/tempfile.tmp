@@ -1,0 +1,272 @@
+﻿<%@ Page Title="" Language="VB" AutoEventWireup="false" MasterPageFile="~/SiteMaster.Master"
+    CodeBehind="AffaireLister.aspx.vb" Inherits="ComptaAna.net.AffaireLister" %>
+
+<%@ Register Assembly="Obout.Ajax.UI" Namespace="Obout.Ajax.UI.TreeView" TagPrefix="obout" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        #TextCom
+        {
+            width: 391px;
+        }
+        .style1
+        {
+            width: 470px;
+        }
+        .Grid
+        {
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Content" runat="server">
+    <%--
+ Test ScriptManager probleme de version a cause de oBout
+    --%>
+    <asp:ScriptManager ID="ScriptManagerTEST" runat="server" EnablePartialRendering="true">
+    </asp:ScriptManager>
+    <%-- Treeview--%>
+    <h1>Liste des affaires</h1>
+    <table>
+        <tr>
+            <td>
+<<<<<<< .mine
+                <asp:Button ID="btnNouvelleAffaire" runat="server" Text="Nouveau site" CssClass="btn175" />
+=======
+                <fieldset class="RechercheTreeView">
+                    <legend>Champs de recherche</legend>
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                <asp:DropDownList runat="server" ID="ddlRecherche">
+                                    <asp:ListItem Text="Par Client" Value="client" />
+                                    <asp:ListItem Text="Par Type d'affaire" Value="type" />
+                                    <asp:ListItem Text="Par BU" Value="bu" />
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:CheckBox runat="server" ID="cbAffaireTerminee" />
+                            </td>
+                            <td>
+                                Affaire terminée
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:CheckBox runat="server" ID="cbAffaireDepassee" />
+                            </td>
+                            <td>
+                                Affaire en dépassement
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:CheckBox runat="server" ID="cbAffaireMouvementee" />
+                            </td>
+                            <td>
+                                Affaire mouvementée
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <asp:Button runat="server" ID="btnRecherche" Text="Rechercher" CssClass="btn90" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <div id="TreeView" style="float: left; height: 600px; width: 200px; overflow: auto;">
+                    <obout:Tree ID="tvAffaires" CssClass="vista" runat="server" Width="200px" OnSelectedTreeNodeChanged="tvAffaires_SelectedTreeNodeChanged">
+                    </obout:Tree>
+                </div>
+>>>>>>> .r7332
+            </td>
+            <td valign="top">
+                <%-- Boutons--%>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Button ID="btnNouvelleAffaire" runat="server" Text="Nouveau" CssClass="btn90" />
+                        </td>
+                        <td>
+                            <asp:Button ID="btnModifierAffaire" runat="server" Text="Modifier" CssClass="btn90" />
+                        </td>
+                    </tr>
+                </table>
+                <%-- Afficher une affaire--%>
+                <fieldset class="AffaireForm">
+                    <legend>Informations Générales</legend>
+                    <table>
+                        <tr>
+                            <td align="right">
+                                Libellé:
+                            </td>
+                            <td colspan="2">
+                                <asp:TextBox ID="tbLibelle" Width="250px" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="right">
+                                Terminée:
+                            </td>
+                            <td>
+                                <asp:CheckBox ID="cbTerminee" AutoPostBack="true" Enabled="false" runat="server" />
+                            </td>
+                            <td>
+                                <asp:Label ID="lblAffaireID" Visible="false" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Début:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbDate" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="right">
+                                Type d'affaire:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbTypeAffaire" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Service:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbService" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="right">
+                                Chargé d'affaire:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbChargeDAffaire" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Commentaires:
+                            </td>
+                            <td colspan="4">
+                                <asp:TextBox ID="tbCom" Style="resize: none;" TextMode="Multiline" Width="99%" Height="75px"
+                                    Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <%-- informations Budgetaires--%>
+                <fieldset class="InfoBudForm">
+                    <legend>Informations Budgétaires</legend>
+                    <table>
+                        <tr>
+                            <td align="right">
+                                Commande HT:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbBudget" Style="text-align: right" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="right">
+                                Total HT consommé:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbHTconso" Style="text-align: right" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Prestation restante HT:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbPrestRest" Style="text-align: right" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="right">
+                                Frais HT consommés:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbFraisConso" Style="text-align: right" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Nombre de jours passés:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbNbJoursPasses" Style="text-align: right" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="right">
+                                Coût moyen journalier:
+                            </td>
+                            <td>
+                                <asp:TextBox ID="tbCtMoyen" Style="text-align: right" Enabled="false" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <%-- Affichage Qualification--%>
+                <fieldset class="QualificationFrom">
+                    <legend>Qualification</legend>
+                    <asp:GridView AutoGenerateColumns="False" ID="gvQualifAffaire" border="1" runat="server"
+                        ShowHeaderWhenEmpty="true" Width="680" OnRowCommand="gvQualifAffaire_RowCommand" CssClass="Grid">
+                        <Columns>
+                            <asp:BoundField DataField="QualificationLibelle" HeaderText="Qualification" SortExpression="Qualification">
+                                <ItemStyle Height="20px" Width="160px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="QualifMntUnitHT" HeaderText="PrixHT" SortExpression="PrixHT">
+                                <ItemStyle HorizontalAlign="Right" Width="150px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="QualifNbJours" HeaderText="Nbre jours" SortExpression="NbreJours">
+                                <ItemStyle HorizontalAlign="Right" Width="150px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Prix total">
+                                <ItemTemplate>
+                                    <asp:TextBox ID="tbPrixTotal" Enabled="false" Style="text-align: right" runat="server"
+                                        Text='<%# Bind("total") %>' />
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="tbPrixTotal" runat="server" Text='<%# Eval("total") %>' />
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                    <%-- total--%>
+                    <div runat="server" id="divTotal" visible="false">
+                        <table>
+                            <tr>
+                                <td class="style1">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <asp:Label runat="server" ID="lblTotal" Text="Total :" />
+                                </td>
+                                <td>
+                                    <asp:TextBox runat="server" ID="tbTotal" Style="text-align: right" Enabled="false" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </fieldset>
+                <%-- Etapes de Facturation--%>
+                <fieldset class="EtapeFactuFrom">
+                    <legend>Etapes de Facturation</legend>
+                    <asp:GridView AutoGenerateColumns="False" ID="gvEtapesFactu" border="1" runat="server"
+                       ShowHeaderWhenEmpty="true" Width="300" OnRowCommand="gvEtapesFactu_RowCommand" CssClass="Grid">
+                        <Columns>
+                            <asp:BoundField DataField="EtapeFactureRef" HeaderText="% d'avancement" SortExpression="EtapeFactureRef">
+                                <ItemStyle Height="20px" Width="140px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Validation" ControlStyle-Width="140px">
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkValide" align="center" runat="server" Enabled="false" Checked='<%# Convert.ToBoolean(Eval("EtapeFactureValide")) %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </fieldset>
+            </td>
+        </tr>
+    </table>
+</asp:Content>

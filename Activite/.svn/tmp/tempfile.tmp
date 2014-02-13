@@ -1,0 +1,480 @@
+﻿<%@ Page Title="Releve d'activite" Language="vb" AutoEventWireup="false" MasterPageFile="~/SiteMaster.Master"
+    CodeBehind="ReleveActivite.aspx.vb" Inherits="ComptaAna.net.ReleveActivite" %>
+
+<%@ Register Assembly="obout_Calendar2_Net" Namespace="OboutInc.Calendar2" TagPrefix="obout" %>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="Head">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Content">
+    <div class="content">
+        <asp:Menu ID="mMenuInsertionVisualision" Width="168px" runat="server" OnMenuItemClick="mMenuInformationCout_MenuItemClick"
+            Orientation="Horizontal" StaticEnableDefaultPopOutImage="False">
+            <Items>
+                <asp:MenuItem Text="Insertion" Value="0"></asp:MenuItem>
+                <asp:MenuItem Text="Visualisation" Value="1"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <asp:MultiView ID="mvInsertion" runat="server" ActiveViewIndex="0">
+            <asp:View ID="vInsertion" runat="server">
+                <fieldset class="loginUserForm">
+                    <legend>Relevé d'activité </legend>
+                    <asp:Button ID="btnPeriode" runat="server" Text="Changer de période" Visible="false" />
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblDateDebut" runat="server" Text="Date de debut :" />
+                            </td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbDateDeb" Width="65px" />
+                                <obout:Calendar ID="cDateDeb" runat="server" DatePickerMode="true" DatePickerImagePath="~/App_Themes/ComptaAna/Images/datePicker.gif"
+                                    TextBoxId="tbDateDeb" DateFormat="dd/MM/yyyy">
+                                </obout:Calendar>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblDateFin" runat="server" Text="Date de fin :" />
+                            </td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbDateFin" Width="65px" />
+                                <obout:Calendar ID="cDateFin" runat="server" DatePickerMode="true" DatePickerImagePath="~/App_Themes/ComptaAna/Images/datePicker.gif"
+                                    TextBoxId="tbDateFin" DateFormat="dd/MM/yyyy">
+                                </obout:Calendar>
+                            </td>
+                            <td>
+                                <asp:ImageButton ID="ibDates" runat="server" ImageUrl="~/App_Themes/ComptaAna/Images/pictos/analyses.png" />
+                            </td>
+                            <td>
+                                <asp:CompareValidator ID="cvDateDebut" runat="server" Type="Date" Display="Dynamic"
+                                    Operator="DataTypeCheck" ControlToValidate="tbDateDeb" ErrorMessage="Veuillez insérer une date de début Valide<br/>" />
+                                <asp:CompareValidator ID="cvDateFin" runat="server" Type="Date" Operator="DataTypeCheck"
+                                    ControlToValidate="tbDateFin" ErrorMessage="Veuillez insérer une date de fin Valide<br/>"
+                                    Display="Dynamic" />
+                                <asp:CompareValidator ID="cvPeriode" runat="server" ControlToValidate="tbDateDeb"
+                                    ControlToCompare="tbDateFin" Operator="LessThanEqual" Type="Date" Display="Dynamic"
+                                    ErrorMessage="La période n'est pas valide<br/>" />
+                                <asp:RequiredFieldValidator runat="server" ID="rfvDateDeb" ControlToValidate="tbDateDeb"
+                                    Display="Dynamic" ErrorMessage="Une date de début est requise<br/>" />
+                                <asp:RequiredFieldValidator runat="server" ID="rfvDateFin" ControlToValidate="tbDateFin"
+                                    Display="Dynamic" ErrorMessage="Une date de fin est requise<br/>" />
+                            </td>
+                        </tr>
+                    </table>
+                    <div runat="server" id="divReleve" visible="false">
+                        <asp:RadioButtonList ID="tblReleve" runat="server" AutoPostBack="true" RepeatDirection="Horizontal">
+                            <asp:ListItem Selected="true">Associé à une affaire</asp:ListItem>
+                            <asp:ListItem> Non associé à une affaire</asp:ListItem>
+                        </asp:RadioButtonList>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblAffaire" runat="server" Text="Affaire" />
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlAffaire" runat="server" DataValueField="AffaireID" DataTextField="AffaireLibelle"
+                                        AutoPostBack="true" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblSite" runat="server" Text="Sites concerné" />
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlSite" runat="server" DataValueField="ClientID" DataTextField="ClientNom">
+                                        <asp:ListItem Text="-- Site -- " Value="default" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblQualification" runat="server" Text="Qualification" />
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlQualification" runat="server" DataValueField="QualificationID"
+                                        DataTextField="QualificationLibelle" Height="16px" />
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblDate" runat="server" Text="Date:" />
+                                </td>
+                                <td>
+                                    <asp:TextBox runat="server" ID="tbDate" Width="65px" />
+                                    <obout:Calendar ID="cCalendrier" runat="server" DatePickerMode="true" DatePickerImagePath="~/App_Themes/ComptaAna/Images/datePicker.gif"
+                                        TextBoxId="tbDate" DateFormat="dd/MM/yyyy">
+                                    </obout:Calendar>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblType" runat="server" Text="Type:" />
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlType" runat="server" DataValueField="typeProduitID" DataTextField="typeProduitLibelle"
+                                        AutoPostBack="true">
+                                        <asp:ListItem Text="Choisir un Type" Value="Default" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblReference" runat="server" Text="Référence:" />
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlProduit" runat="server" DataValueField="produitID" DataTextField="produitLibelle"
+                                        Width="100px">
+                                        <asp:ListItem Text="-- Produit -- " Value="default" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblService" runat="server" Text="Service"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlService" runat="server" DataValueField="ServiceID" DataTextField="serviceLibelle" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblQuantite" runat="server" Text="quantite:" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="tbQuantite" runat="server" AutoPostBack="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <asp:Label runat="server" ID="lblLibelle" Text="Libelle" />
+                                            </td>
+                                            <td>
+                                                <asp:TextBox runat="server" ID="tbLibelle" />
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblPU" runat="server" Text="Prix unitaire HT:"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="tbPrixUnit" runat="server" AutoPostBack="true" />
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <asp:Label runat="server" ID="lblResponsable" Text="Responsable" />
+                                            </td>
+                                            <td>
+                                                <asp:DropDownList ID="ddlResponsable" runat="server" DataValueField="employeID" DataTextField="employeNom" />
+                                            </td>
+                                            <td>
+                                                <asp:Label runat="server" ID="lblDonneurOrdre" Text="Donneur d'ordre" />
+                                            </td>
+                                            <td>
+                                                <asp:TextBox runat="server" ID="tbDonneurOrdre" />
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblTVA" runat="server" Text="Tva:" />
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlTVA" runat="server" DataValueField="tvaID" DataTextField="tvaTaux"
+                                        AutoPostBack="true" />
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblTotal" runat="server" Text="Total:" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="tbTotal" runat="server" AutoPostBack="true" Enabled="false" />
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="16" align="right">
+                                    <asp:Button ID="bNouveau" CssClass="btn75" runat="server" Text="Nouveau" ValidationGroup="vgReleve" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <%--
+Validator du formulaire
+
+1 Date choisie --%>
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" runat="server" ID="rfvPU"
+                        ControlToValidate="tbPrixUnit" Display="Dynamic" ErrorMessage="Un prix unitaire est requis <br/>" />
+                    <asp:CompareValidator ValidationGroup="vgReleve" ID="cvDate" runat="server" Type="Date"
+                        Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="tbDate" ErrorMessage="Veuillez insérer une date Valide <br/>" />
+                    <asp:CompareValidator ValidationGroup="vgReleve" ID="cvDateMin" runat="server" ControlToValidate="tbDate"
+                        ControlToCompare="tbDateDeb" Operator="GreaterThanEqual" Type="Date" Display="Dynamic"
+                        ErrorMessage="La date n'est pas dans la période <br/>" />
+                    <asp:CompareValidator ValidationGroup="vgReleve" ID="cvDateMax" runat="server" ControlToValidate="tbDate"
+                        ControlToCompare="tbDateFin" Operator="LessThanEqual" Type="Date" Display="Dynamic"
+                        ErrorMessage="La date n'est pas dans la période <br/>" />
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" runat="server" ID="rfvDate"
+                        ControlToValidate="tbDate" Display="Dynamic" ErrorMessage="Une date est requise <br/>" />
+                    <%--
+2 DDLType       --%>
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" ID="RfvType" runat="server"
+                        ControlToValidate="ddlType" InitialValue="default" ErrorMessage="Le choix d'un type de produit est requis <br/>"
+                        Display="Dynamic" />
+                    <%--
+3 DDLProduit       --%>
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" ID="rfvProduit" runat="server"
+                        ControlToValidate="ddlProduit" InitialValue="default" ErrorMessage="Le choix d'un produit est requis<br/>"
+                        Display="Dynamic" />
+                    <%--
+4 tbQuantite       --%>
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" ID="rfvQuantite" runat="server"
+                        ControlToValidate="tbQuantite" ErrorMessage="Une quantite est requise<br/>" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ValidationGroup="vgReleve" ID="revTbQuantite" runat="server"
+                        Display="Dynamic" ValidationExpression="[-+]?[0-9]*[.|,]?[0-9]*" ControlToValidate="tbQuantite"
+                        ErrorMessage="Veuillez insérer un nombre<br/>" />
+                    <%--
+5 tbPrixUnit       --%>
+                    <asp:RegularExpressionValidator ValidationGroup="vgReleve" ID="revPrixunit" runat="server"
+                        Display="Dynamic" ValidationExpression="[-+]?[0-9]*[.|,]?[0-9]*" ControlToValidate="tbQuantite"
+                        ErrorMessage="Veuillez insérer un nombre<br/>" />
+                    <%--
+PARTIE ASSOCIE !
+
+6 ddlAffaire       --%>
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" ID="rfvAffaire" runat="server"
+                        ControlToValidate="ddlAffaire" InitialValue="default" ErrorMessage="Le choix d'une affaire est requis<br/>"
+                        Display="Dynamic" />
+                    <%--
+6 ddlSite       --%>
+                    <asp:RequiredFieldValidator ValidationGroup="vgReleve" ID="rfvSite" runat="server"
+                        ControlToValidate="ddlSite" InitialValue="default" ErrorMessage="Le choix d'un site est requis<br/>"
+                        Display="Dynamic" />
+                    <asp:Label ID="lbQteErreur" runat="server" Text="<font color=red>La quantité journalière est supérieur à 1</font> <br />"
+                        Visible="False" />
+                    <br />
+<<<<<<< .mine
+                    <asp:GridView ID="gvProduitAffaire" runat="server" AutoGenerateColumns="False" CssClass="Grid" EmptyDataText="Pas de données" ShowHeaderWhenEmpty="true">
+                        
+                        
+=======
+                    <asp:GridView ID="gvProduitAffaire" runat="server" AutoGenerateColumns="False" CssClass="Grid"
+                        ShowHeaderWhenEmpty="true">
+>>>>>>> .r7332
+                        <Columns>
+                            <asp:TemplateField HeaderText="Date">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblDate" Text='<%# Bind("ProduitAffaireDate","{0:d}") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Libelle">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblLibelle" Text='<%# Bind("ProduitAffaireLibelle") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Client - Site">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblClient" Text='<%# Bind("ClientNom") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Référence">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblReference" Text='<%# Bind("ProduitLibelle") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Prix Unitaire">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblPrixUnit" Text='<%# Bind("ProduitAffairePrixUnit") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Quantité">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblQuantite" Text='<%# Bind("ProduitAffaireQte") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Total HT">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblTotalHT" Text='<%# Bind("TotalTTC") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="TVA">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblTva" Text='<%# Bind("TvaTaux") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Total TTC">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblTotalTTC" Text='<%# Bind("TotalTTC") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Donneur d'ordre">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblDonneurOrdre" Text='<%# Bind("ProduitAffaireDonneurOrdre") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Supprimer">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="BtnDelete" runat="server" CommandName="Delete" ImageUrl="~/App_Themes/ComptaAna/Images/pictos/supprimerHD.png"
+                                        OnClientClick="return confirm('Êtes-vous sur de vouloir supprimer ce produit');" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField Visible="false">
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lblProduitAffaireID" Text='<%# Bind("ProduitAffaireID") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </fieldset>
+            </asp:View>
+            <asp:View ID="vVisualisation" runat="server">
+                <fieldset class="loginUserForm">
+                    <legend>Visualisation des données </legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label1" runat="server" Text="Date de debut :" />
+                            </td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbDateDebVisualisation" Width="65px" />
+                                <obout:Calendar ID="Calendar1" runat="server" DatePickerMode="true" DatePickerImagePath="~/App_Themes/ComptaAna/Images/datePicker.gif"
+                                    TextBoxId="tbDateDebVisualisation" DateFormat="dd/MM/yyyy">
+                                </obout:Calendar>
+                            </td>
+                            <td>
+                                <asp:Label ID="Label2" runat="server" Text="Date de fin :" />
+                            </td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbDateFinVisualisation" Width="65px" />
+                                <obout:Calendar ID="Calendar2" runat="server" DatePickerMode="true" DatePickerImagePath="~/App_Themes/ComptaAna/Images/datePicker.gif"
+                                    TextBoxId="tbDateFinVisualisation" DateFormat="dd/MM/yyyy">
+                                </obout:Calendar>
+                            </td>
+                            <td>
+                                <asp:ImageButton ID="ibDatesVisualisation" runat="server" ImageUrl="~/App_Themes/ComptaAna/Images/pictos/analyses.png"
+                                    BorderStyle="None" />
+                            </td>
+                            <td>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" Type="Date" Display="Dynamic"
+                                    Operator="DataTypeCheck" ControlToValidate="tbDateDebVisualisation" ErrorMessage="Veuillez insérer une date de début Valide<br/>" />
+                                <asp:CompareValidator ID="CompareValidator2" runat="server" Type="Date" Operator="DataTypeCheck"
+                                    ControlToValidate="tbDateFinVisualisation" ErrorMessage="Veuillez insérer une date de fin Valide<br/>"
+                                    Display="Dynamic" />
+                                <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="tbDateDebVisualisation"
+                                    ControlToCompare="tbDateFinVisualisation" Operator="LessThanEqual" Type="Date"
+                                    Display="Dynamic" ErrorMessage="La période n'est pas valide<br/>" />
+                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ControlToValidate="tbDateDebVisualisation"
+                                    Display="Dynamic" ErrorMessage="Une date de début est requise<br/>" />
+                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ControlToValidate="tbDateFinVisualisation"
+                                    Display="Dynamic" ErrorMessage="Une date de fin est requise<br/>" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:DropDownList runat="server" ID="ddlEmployeVisualisation" DataValueField="employeID"
+                                    DataTextField="employeNom" />
+                            </td>
+                            <td colspan="3">
+                                <asp:CheckBox ID="cbNonAssocie" runat="server" Text="Afficher les produits non associés aux affaires" />
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:GridView ID="gvProduitAffaireVisualisation" runat="server" AutoGenerateColumns="False"
+                        CssClass="Grid" ShowHeaderWhenEmpty="true">
+                        <Columns>
+                            <asp:TemplateField HeaderText="Date">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblDate" runat="server" Text='<%# Bind("ProduitAffaireDate","{0:d}") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Libelle">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblLibelle" runat="server" Text='<%# Bind("ProduitAffaireLibelle") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Client - Site">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblClient" runat="server" Text='<%# Bind("ClientNom") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Référence">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblReference" runat="server" Text='<%# Bind("ProduitLibelle") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Prix Unitaire">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblPrixUnit" runat="server" Text='<%# Bind("ProduitAffairePrixUnit") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Quantité">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblQuantite" runat="server" Text='<%# Bind("ProduitAffaireQte") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Total HT">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblTotalHT" runat="server" Text='<%# Bind("TotalTTC") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="TVA">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblTva0" runat="server" Text='<%# Bind("TvaTaux") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Total TTC">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblTotalTTC" runat="server" Text='<%# Bind("TotalTTC") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Donneur d'ordre">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblDonneurOrdre" runat="server" Text='<%# Bind("ProduitAffaireDonneurOrdre") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Supprimer">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="BtnDelete" runat="server" CommandName="Delete" ImageUrl="~/App_Themes/ComptaAna/Images/pictos/supprimerHD.png"
+                                        OnClientClick="return confirm('Êtes-vous sur de vouloir supprimer ce produit');" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField Visible="false">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblProduitAffaireID" runat="server" Text='<%# Bind("ProduitAffaireID") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </fieldset>
+            </asp:View>
+        </asp:MultiView>
+    </div>
+</asp:Content>

@@ -1,0 +1,185 @@
+﻿Imports ComptaAna.Business
+Imports ComptaAna.net.Droit
+
+Public Class MasterPage
+    Inherits System.Web.UI.MasterPage
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        divBandeau.Attributes("class") = "headerPreprod"
+
+        If (CBool(Session("Connecter"))) Then
+            Dim iProfil As Integer
+            Dim oEmploye As CEmploye = CType(Session("Employe"), CEmploye)
+            iProfil = oEmploye.ProfilID
+
+            lblConnecte.Visible = True
+            lblConnecte.Text = oEmploye.EmployePrenom & " " & oEmploye.EmployeNom & ", " & Space(1)
+
+            ' GESTION DU MENU EN FONCTION DU PROFIL ET DES DROITS
+            MainMenu.Items.Clear()
+
+            ' Menu GESTION
+            Dim menuGestion = New MenuItem("Gestion")
+            menuGestion.PopOutImageUrl = "~/App_Themes/ComptaAna/Design/Menu_popup.png"
+            Dim menuEmploye = New MenuItem("Employés", "", "", "~/Gestion/Employe/EmployeLister.aspx")
+            Dim menuClient = New MenuItem("Clients", "", "", "~/Gestion/Client/ClientListe.aspx")
+            Dim menuAffaire = New MenuItem("Affaires", "", "", "~/Gestion/Affaire/AffaireLister.aspx")
+            Dim menuCatalogue = New MenuItem("Catalogue", "", "", "~/Gestion/Catalogue.aspx")
+
+            ' Menu relevé d'activité
+            Dim menuReleve = New MenuItem("Relevé d'activité", "", "", "~/activite/ReleveActivite.aspx")
+
+            ' Menu Recherche
+            Dim menurecherche = New MenuItem("Recherche")
+
+            ' Menu Statistique
+            Dim menuStat = New MenuItem("Statistiques")
+            menuStat.PopOutImageUrl = "~/App_Themes/ComptaAna/Design/Menu_popup.png"
+            Dim menuStatG = New MenuItem("Statistiques Générales", "", "", "~/Statistiques/StatistiquesGenerales.aspx")
+            Dim menuStatEmployeService = New MenuItem("Calcul de la rentabilité", "", "", "~/Statistiques/StatEmployeService.aspx")
+            Dim menuStatTypeProduit = New MenuItem("Statistiques sur les frais fixes et les frais variables", "", "", "~/Statistiques/StatTypeProduit.aspx")
+            Dim menuStatCoutSalaire = New MenuItem("Statistiques sur les coûts salariaux", "", "", "~/Statistiques/StatCoutsSalariaux.aspx")
+
+            ' Menu Administration
+            Dim menuAdministration = New MenuItem("Administration")
+            menuAdministration.PopOutImageUrl = "~/App_Themes/ComptaAna/Design/Menu_popup.png"
+            Dim menuTypeProduit = New MenuItem("Types de produit", "", "", "~/Administration/GestionTypeProduit.aspx")
+            Dim menuQualif = New MenuItem("Qualifications", "", "", "~/Administration/GestionPrixQualifTypeAffaire.aspx")
+            Dim menuService = New MenuItem("Services", "", "", "~/Administration/GestionService.aspx")
+            Dim menuTva = New MenuItem("TVA", "", "", "~/Administration/GestionTVA.aspx")
+            Dim menuFiliale = New MenuItem("Filiales", "", "", "~/Administration/GestionFiliale.aspx")
+            Dim menuPoste = New MenuItem("Postes", "", "", "~/Administration/GestionPoste.aspx")
+
+            Dim lDroit As ArrayList = CType(Session("droit"), ArrayList)
+
+            Dim lDroitAVerifGestion As New ArrayList
+            lDroitAVerifGestion.Add(3)
+            lDroitAVerifGestion.Add(6)
+            lDroitAVerifGestion.Add(9)
+            lDroitAVerifGestion.Add(10)
+
+            If verifDroit(lDroit, 3) Then menuGestion.ChildItems.Add(menuClient)
+            If verifDroit(lDroit, 6) Then menuGestion.ChildItems.Add(menuEmploye)
+            If verifDroit(lDroit, 9) Then menuGestion.ChildItems.Add(menuAffaire)
+            If verifDroit(lDroit, 10) Then menuGestion.ChildItems.Add(menuCatalogue)
+
+            If existeUnDroit(lDroit, lDroitAVerifGestion) Then
+                MainMenu.Items.Add(menuGestion)
+            End If
+
+
+            
+
+            If verifDroit(lDroit, 11) Then MainMenu.Items.Add(menuReleve)
+
+            Dim lDroitAVerif As New ArrayList
+            lDroitAVerif.Add(13)
+            lDroitAVerif.Add(14)
+            lDroitAVerif.Add(15)
+            lDroitAVerif.Add(16)
+
+            If verifDroit(lDroit, 13) Then menuStat.ChildItems.Add(menuStatG)
+            If verifDroit(lDroit, 14) Then menuStat.ChildItems.Add(menuStatTypeProduit)
+            If verifDroit(lDroit, 15) Then menuStat.ChildItems.Add(menuStatEmployeService)
+            If verifDroit(lDroit, 16) Then menuStat.ChildItems.Add(menuStatCoutSalaire)
+            If existeUnDroit(lDroit, lDroitAVerif) Then
+                MainMenu.Items.Add(menuStat)
+            End If
+
+
+            If verifDroit(lDroit, 17) Then
+                menuAdministration.ChildItems.Add(menuFiliale)
+                menuAdministration.ChildItems.Add(menuPoste)
+                menuAdministration.ChildItems.Add(menuQualif)
+                menuAdministration.ChildItems.Add(menuService)
+                menuAdministration.ChildItems.Add(menuTva)
+                menuAdministration.ChildItems.Add(menuTypeProduit)
+                MainMenu.Items.Add(menuAdministration)
+            End If
+
+            ' profil 1 c'est Salarié
+            ' If (iProfil = 1) Then
+
+            'menu gestion Affaire : lecture 
+            'menuGestion.ChildItems.Add(menuClient)
+            'menuGestion.ChildItems.Add(menuEmploye)
+            'menuGestion.ChildItems.Add(menuAffaire)
+            'MainMenu.Items.Add(menuGestion)
+
+            'menu relevé d'activité
+            '    MainMenu.Items.Add(menuReleve)
+
+            '    ' PROFIL 2 c'est responsable BU
+            'ElseIf (iProfil = 2) Then
+            '    'menu gestion Affaire : lecture écriture facture
+            '    menuGestion.ChildItems.Add(menuEmploye)
+            '    menuGestion.ChildItems.Add(menuClient)
+            '    menuGestion.ChildItems.Add(menuAffaire)
+            '    MainMenu.Items.Add(menuGestion)
+
+            '    'menu relevé d'activité
+            '    MainMenu.Items.Add(menuReleve)
+
+            '    'Menu Statistique
+            '    menuStat.ChildItems.Add(menuStatG)
+            '    menuStat.ChildItems.Add(menuStatTypeProduit)
+            '    MainMenu.Items.Add(menuStat)
+
+
+            'PROFIL 3 c'est Administrateur Général
+            'ElseIf (iProfil = 3) Then
+            '    'menu gestion Affaire : lecture écriture facture
+            '    menuGestion.ChildItems.Add(menuEmploye)
+            '    menuGestion.ChildItems.Add(menuClient)
+            '    menuGestion.ChildItems.Add(menuAffaire)
+            '    menuGestion.ChildItems.Add(menuCatalogue)
+            '    MainMenu.Items.Add(menuGestion)
+
+            '    'menu relevé d'activité
+            '    MainMenu.Items.Add(menuReleve)
+
+            '    'Menu Statistique
+            '    MainMenu.Items.Add(menuStat)
+            '    menuStat.ChildItems.Add(menuStatG)
+            '    menuStat.ChildItems.Add(menuStatEmployeService)
+            '    menuStat.ChildItems.Add(menuStatTypeProduit)
+            '    menuStat.ChildItems.Add(menuStatCoutSalaire)
+
+            'menu Administration
+            'menuAdministration.ChildItems.Add(menuFiliale)
+            'menuAdministration.ChildItems.Add(menuPoste)
+            'menuAdministration.ChildItems.Add(menuQualif)
+            'menuAdministration.ChildItems.Add(menuService)
+            'menuAdministration.ChildItems.Add(menuTva)
+            'menuAdministration.ChildItems.Add(menuTypeProduit)
+            'MainMenu.Items.Add(menuAdministration)
+
+            'PROFIL 4: Responsable Administratif
+            'ElseIf (iProfil = 4) Then
+
+            '    'menu gestion Affaire : lecture écriture facture
+            '    menuGestion.ChildItems.Add(menuEmploye)
+            '    menuGestion.ChildItems.Add(menuClient)
+            '    menuGestion.ChildItems.Add(menuAffaire)
+            '    MainMenu.Items.Add(menuGestion)
+
+            '    'menu relevé d'activité
+            '    MainMenu.Items.Add(menuReleve)
+
+            '    'Menu Statistique
+            '    menuStat.ChildItems.Add(menuStatG)
+            '    menuStat.ChildItems.Add(menuStatTypeProduit)
+            '    MainMenu.Items.Add(menuStat)
+        Else
+            MsgBox(Prompt:="erreur System")
+        End If
+
+
+    End Sub
+
+    Protected Sub LogoutButton_Click(ByVal sender As Object, ByVal e As EventArgs) Handles LogoutButton.Click
+        Session.Clear()
+        Response.Redirect("~/Login.aspx")
+    End Sub
+End Class

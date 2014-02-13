@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{A87FF069-A1B9-4AD6-924F-AEA2339E7C8D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ComptaAna.net</RootNamespace>
+    <AssemblyName>ComptaAna.net</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ComptaAna.net.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ComptaAna.net.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="a6tm.Framework, Version=4.0.0.5, Culture=neutral, PublicKeyToken=77e64a565e6f6d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_References\a6tm.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Obout.Ajax.UI">
+      <HintPath>C:\Users\ybleuzen\Documents\Visual Studio 2008\Controls\obout Suite for ASP.NET 3.5 and up\Obout.Ajax.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Calendar2_Net">
+      <HintPath>C:\Users\ybleuzen\Documents\Visual Studio 2008\Controls\obout Suite for ASP.NET 3.5 and up\obout_Calendar2_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_ComboBox">
+      <HintPath>C:\Users\ybleuzen\Documents\Visual Studio 2008\Controls\obout Suite for ASP.NET 3.5 and up\obout_ComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Interface">
+      <HintPath>C:\Users\ybleuzen\Documents\Visual Studio 2008\Controls\obout Suite for ASP.NET 3.5 and up\obout_Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activite\ReleveActivite.aspx.designer.vb">
+      <DependentUpon>ReleveActivite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activite\ReleveActivite.aspx.vb">
+      <DependentUpon>ReleveActivite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionFiliale.aspx.designer.vb">
+      <DependentUpon>GestionFiliale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionFiliale.aspx.vb">
+      <DependentUpon>GestionFiliale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionPrixQualifTypeAffaire.aspx.designer.vb">
+      <DependentUpon>GestionPrixQualifTypeAffaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionPrixQualifTypeAffaire.aspx.vb">
+      <DependentUpon>GestionPrixQualifTypeAffaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionService.aspx.designer.vb">
+      <DependentUpon>GestionService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionService.aspx.vb">
+      <DependentUpon>GestionService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionTVA.aspx.designer.vb">
+      <DependentUpon>GestionTVA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionTVA.aspx.vb">
+      <DependentUpon>GestionTVA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GestionTypeProduit.aspx.designer.vb">
+      <DependentUpon>GestionTypeProduit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GestionTypeProduit.aspx.vb">
+      <DependentUpon>GestionTypeProduit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Affaire.aspx.designer.vb">
+      <DependentUpon>Affaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Affaire.aspx.vb">
+      <DependentUpon>Affaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\AffaireFacture.aspx.designer.vb">
+      <DependentUpon>AffaireFacture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\AffaireFacture.aspx.vb">
+      <DependentUpon>AffaireFacture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\AffaireFactureDetails.aspx.designer.vb">
+      <DependentUpon>AffaireFactureDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\AffaireFactureDetails.aspx.vb">
+      <DependentUpon>AffaireFactureDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\AffaireInserer.aspx.designer.vb">
+      <DependentUpon>AffaireInserer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\AffaireInserer.aspx.vb">
+      <DependentUpon>AffaireInserer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\AffaireLister.aspx.designer.vb">
+      <DependentUpon>AffaireLister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\AffaireLister.aspx.vb">
+      <DependentUpon>AffaireLister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\AffaireModifier.aspx.designer.vb">
+      <DependentUpon>AffaireModifier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\AffaireModifier.aspx.vb">
+      <DependentUpon>AffaireModifier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\AffaireProduits.aspx.designer.vb">
+      <DependentUpon>AffaireProduits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\AffaireProduits.aspx.vb">
+      <DependentUpon>AffaireProduits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Catalogue.aspx.designer.vb">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Catalogue.aspx.vb">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\ClientListe.aspx.designer.vb">
+      <DependentUpon>ClientListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\ClientListe.aspx.vb">
+      <DependentUpon>ClientListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\ClientModification.aspx.designer.vb">
+      <DependentUpon>ClientModification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\ClientModification.aspx.vb">
+      <DependentUpon>ClientModification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+<<<<<<< .mine
+    <Compile Include="Gestion\EmployeLister.aspx.designer.vb">
+      <DependentUpon>EmployeLister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\EmployeLister.aspx.vb">
+      <DependentUpon>EmployeLister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\EmployeModifier.aspx.designer.vb">
+      <DependentUpon>EmployeModifier.aspx</DependentUpon>
+=======
+    <Compile Include="Gestion\EmployeCout.aspx.designer.vb">
+      <DependentUpon>EmployeCout.aspx</DependentUpon>
+>>>>>>> .r7332
+    </Compile>
+    <Compile Include="Gestion\EmployeCout.aspx.vb">
+      <DependentUpon>EmployeCout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+<<<<<<< .mine
+    <Compile Include="Gestion\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+=======
+>>>>>>> .r7332
+    <Compile Include="Gestion\testMultiView.aspx.designer.vb">
+      <DependentUpon>testMultiView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\testMultiView.aspx.vb">
+      <DependentUpon>testMultiView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+<<<<<<< .mine
+=======
+    <Compile Include="Gestion\EmployeModifier.aspx.designer.vb">
+      <DependentUpon>EmployeModifier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\EmployeModifier.aspx.vb">
+      <DependentUpon>EmployeModifier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+>>>>>>> .r7332
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Statistiques\StatistiquesGenerales.aspx.designer.vb">
+      <DependentUpon>StatistiquesGenerales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\StatistiquesGenerales.aspx.vb">
+      <DependentUpon>StatistiquesGenerales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Commun\CConfiguration.vb" />
+    <Compile Include="SiteMaster.Master.designer.vb">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMaster.Master.vb">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Activite\ReleveActivite.aspx" />
+    <Content Include="Administration\GestionFiliale.aspx" />
+    <Content Include="Administration\GestionPrixQualifTypeAffaire.aspx" />
+    <Content Include="Administration\GestionService.aspx" />
+    <Content Include="Administration\GestionTVA.aspx" />
+    <Content Include="Administration\GestionTypeProduit.aspx" />
+    <Content Include="App_Themes\ComptaAna\Images\axone.png" />
+    <Content Include="App_Themes\ComptaAna\Images\backTitre.png" />
+    <Content Include="App_Themes\ComptaAna\Images\body.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\bodyAccueil.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\btn.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btn175.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btn225.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btn295.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btn75.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btn90.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnArchive.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnConnexion.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnConnexionhover.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnEditer.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnExport.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\btnExport.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnImprimer.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\btnImprimer.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnModifier.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnPdf.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\btnPdf.png" />
+    <Content Include="App_Themes\ComptaAna\Images\btnSupprimer.png" />
+    <Content Include="App_Themes\ComptaAna\Images\cartouche.png" />
+    <Content Include="App_Themes\ComptaAna\Images\cartouche_titre.png" />
+    <Content Include="App_Themes\ComptaAna\Images\croix_grise.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\croix_grise.png" />
+    <Content Include="App_Themes\ComptaAna\Images\deg_bleu.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\descendre.png" />
+    <Content Include="App_Themes\ComptaAna\Images\descendreBlanc.png" />
+    <Content Include="App_Themes\ComptaAna\Images\fils.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\headerListe - Copie.png" />
+    <Content Include="App_Themes\ComptaAna\Images\headerListe.png" />
+    <Content Include="App_Themes\ComptaAna\Images\headerListeh1.png" />
+    <Content Include="App_Themes\ComptaAna\Images\headerListeIE.png" />
+    <Content Include="App_Themes\ComptaAna\Images\headerTable.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\headerTable.png" />
+    <Content Include="App_Themes\ComptaAna\Images\icone_copier.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\icone_fiche.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\icone_modifier.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\icone_nouvelle_ligne.png" />
+    <Content Include="App_Themes\ComptaAna\Images\icone_supprimer.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\ListePicto.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\logo_pdf.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\logo_pdf_new.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\logo_xls.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\logo_xls_new.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\menu.png" />
+    <Content Include="App_Themes\ComptaAna\Images\menuGaucheSeparateur.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\menugauche_mr.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\menugauche_titre.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\menuhover.png" />
+    <Content Include="App_Themes\ComptaAna\Images\menu_first.png" />
+    <Content Include="App_Themes\ComptaAna\Images\menu_last.png" />
+    <Content Include="App_Themes\ComptaAna\Images\monter.png" />
+    <Content Include="App_Themes\ComptaAna\Images\monterBlanc.png" />
+    <Content Include="App_Themes\ComptaAna\Images\mrBleu.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\mrBleu.png" />
+    <Content Include="App_Themes\ComptaAna\Images\ombre_menu_gauche.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\add.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ajouter.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\analyses.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\analysesHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\annuler.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\archive.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\archiveHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\archiver.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\archiverHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\archiver_new.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\Axone-icones-OK.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\axone.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\axoneHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\barre0.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\barre100.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\barre25.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\barre50.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\barre75.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\broken1.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\calendrier.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\calendrierHD - Copie.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\calendrierHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\chart_bar_add_2.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\chart_bar_edit22.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\copiercoller.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\copiermodele.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\editer.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\enregistrer.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\excel.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\excelHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\excel_ancienlogo.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\excel_ancienlogoHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\export.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ficheaction.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ficheactionHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ficheaudit.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ficheauditHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\fichelecture.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\fichelectureHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\fichelectureJaune.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ficheprogres.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\ficheprogresHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\folder.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\gestiondoc.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\gestiondocHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\Green2.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\imprimer.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\miseenpage.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\miseenpageHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\miseenpageJaune.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\modifier.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\modifierHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\new.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\nouveautes.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\nouveautesHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\parametrage.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\parametrageHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\pdf.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\pilotage.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\pilotageHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\programme.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\programmeHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\Red2.jpg" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\supprimer.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\supprimerHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\valider.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\validerHD.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pictos\word.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pointBleu.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pointGris.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pointJaune.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pointOrange.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pointRouge.png" />
+    <Content Include="App_Themes\ComptaAna\Images\pointVert.png" />
+    <Content Include="App_Themes\ComptaAna\Images\progressbar.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\separateur.png" />
+    <Content Include="App_Themes\ComptaAna\Images\separateur_niveau2.gif" />
+    <Content Include="App_Themes\ComptaAna\Images\sousmenu.png" />
+    <Content Include="App_Themes\ComptaAna\js\client.js" />
+    <Content Include="App_Themes\ComptaAna\js\jquery-1.4.1-vsdoc.js" />
+    <Content Include="App_Themes\ComptaAna\js\jquery-1.4.1.js" />
+    <Content Include="App_Themes\ComptaAna\js\jquery-1.4.1.min.js" />
+    <Content Include="App_Themes\ComptaAna\js\jquery-1.4.2min.js" />
+    <Content Include="App_Themes\ComptaAna\js\jquery-ui-1.8.custom.min.js" />
+    <Content Include="App_Themes\ComptaAna\js\jquery.ui.datepicker-fr.js" />
+    <Content Include="App_Themes\ComptaAna\js\menu.js" />
+    <Content Include="App_Themes\ComptaAna\Style\global.css" />
+    <Content Include="Gestion\Affaire.aspx" />
+    <Content Include="Gestion\Affaire.aspx" />
+    <Content Include="Gestion\AffaireFacture.aspx" />
+    <Content Include="Gestion\AffaireFactureDetails.aspx" />
+    <Content Include="Gestion\AffaireInserer.aspx" />
+    <Content Include="Gestion\AffaireLister.aspx" />
+    <Content Include="Gestion\AffaireModifier.aspx" />
+    <Content Include="Gestion\AffaireProduits.aspx" />
+    <Content Include="Gestion\Catalogue.aspx" />
+    <Content Include="Gestion\ClientListe.aspx" />
+    <Content Include="Gestion\ClientModification.aspx" />
+<<<<<<< .mine
+    <Content Include="Gestion\EmployeLister.aspx" />
+=======
+    <Content Include="Gestion\EmployeCout.aspx" />
+    <Content Include="Gestion\EmployeLister.aspx" />
+>>>>>>> .r7332
+    <Content Include="Gestion\EmployeModifier.aspx" />
+<<<<<<< .mine
+    <Content Include="Gestion\Login.aspx" />
+    <Content Include="Gestion\testMultiView.aspx" />
+    <Content Include="Statistiques\StatistiquesGenerales.aspx" />
+=======
+    <Content Include="Login.aspx" />
+    <Content Include="Statistiques\StatistiquesGenerales.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+>>>>>>> .r7332
+    <Content Include="_References\a6tm.Framework.dll" />
+    <Content Include="_References\AjaxPro.2.dll" />
+    <Content Include="_References\ephtmltopdf.dll" />
+    <Content Include="_References\GemBox.Spreadsheet.dll" />
+    <Content Include="_References\Obout.Ajax.UI.dll" />
+    <Content Include="_References\obout_Calendar2_Net.dll" />
+    <Content Include="_References\obout_ComboBox.dll" />
+    <Content Include="_References\obout_Interface.dll" />
+    <Content Include="_References\Syncfusion.Core.dll" />
+    <Content Include="_References\Syncfusion.DocIO.Base.dll" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="SiteMaster.Master" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="_dev\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComptaAna.Business\ComptaAna.Business.vbproj">
+      <Project>{B60D5D41-F185-4DA0-97B5-D7BEA6525DC2}</Project>
+      <Name>ComptaAna.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60231</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

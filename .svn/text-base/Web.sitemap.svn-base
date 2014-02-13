@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="Accueil">
+        <siteMapNode url="~/Gestion/GestionDefault.aspx" title="Gestion">
+            <siteMapNode url="~/Gestion/Employe/EmployeLister.aspx" title="Employé">
+              <siteMapNode url="~/Gestion/Employe/EmployeModifier.aspx" title="Ajout/Modification d'un employé" />
+              <siteMapNode url="~/Gestion/Employe/EmployeCout.aspx" title="Coût employé" />
+              <siteMapNode url="~/Gestion/Employe/EmployeDroit.aspx" title="Droit employé" />
+            </siteMapNode>
+
+            <siteMapNode url="~/Gestion/Client/ClientListe.aspx" title="Client">
+              <siteMapNode url="~/Gestion/Client/ClientModification.aspx" title="Ajout/modification d'un client" />
+            </siteMapNode>
+
+            <siteMapNode url="~/Gestion/Affaire/AffaireLister.aspx" title="Affaire">
+              <siteMapNode url="~/Gestion/Affaire/AffaireModifier.aspx" title="Modification d'une affaire" />
+              <siteMapNode url="~/Gestion/Affaire/AffaireFacture.aspx" title="Facturation d'une affaire" />
+              <siteMapNode url="~/Gestion/Affaire/AffaireFactureDetails.aspx" title="Facture d'une affaire" />
+              <siteMapNode url="~/Gestion/Affaire/AffaireProduits.aspx" title="Produit d'une affaire" />
+              <siteMapNode url="~/Gestion/Affaire/AffaireInserer.aspx" title="Ajout d'une affaire" />
+            </siteMapNode>
+            
+            <siteMapNode url="~/Gestion/Catalogue.aspx" title="Catalogue" />
+        </siteMapNode>
+        
+        <siteMapNode url="~/Activite/ReleveActivite.aspx" title="Relevé d'activité">
+        </siteMapNode>
+
+        <siteMapNode url="" title="Statistiques">
+            <siteMapNode url="~/Statistiques/StatistiquesGenerales.aspx" title="Statistiques générales" />
+            <siteMapNode url="~/Statistiques/StatEmployeService.aspx" title="Calcul de la rentabilité" />
+            <siteMapNode url="~/Statistiques/StatTypeProduit.aspx" title="Statistiques sur les frais fixes et frais variables" />
+            <siteMapNode url="~/Statistiques/StatCoutsSalariaux.aspx" title="Statistiques sur les coûts salariaux" />
+        </siteMapNode>
+
+        <siteMapNode url="" title="Administration">
+            <siteMapNode url="~/Administration/GestionTypeProduit.aspx" title="Types de produit" />
+            <siteMapNode url="~/Administration/GestionPrixQualifTypeAffaire.aspx" title="Qualification" />
+            <siteMapNode url="~/Administration/GestionService.aspx" title="Services" />
+            <siteMapNode url="~/Administration/GestionTVA.aspx" title="TVA" />
+            <siteMapNode url="~/Administration/GestionFiliale.aspx" title="Filiales" />
+            <siteMapNode url="~/Administration/GestionPoste.aspx" title="Postes" />
+        </siteMapNode>
+
+    </siteMapNode>
+</siteMap>
