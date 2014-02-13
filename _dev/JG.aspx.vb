@@ -51,14 +51,14 @@ Public Class JG
         ws.Cells.GetSubrangeAbsolute(0, 0, 0, 2).Style.Font.Weight = ExcelFont.BoldWeight
 
         ' Ecriture du titre des colonnes + bordures
-        ws.Cells(iLigneDebut, iColPrenom).Value = "Prénom"
+        ws.Cells(iLigneDebut, iColPrenom).Value = "Prénom"2
         ws.Cells(iLigneDebut, iColNom).Value = "Nom"
         ws.Cells(iLigneDebut, iColQualificationLibelle).Value = "Qualification"
         ws.Cells(iLigneDebut, iColPrenom).SetBorders(CType(MultipleBorders.Horizontal + MultipleBorders.Vertical, GemBox.Spreadsheet.MultipleBorders), Drawing.Color.Black, LineStyle.Thin)
         ws.Cells(iLigneDebut, iColNom).SetBorders(CType(MultipleBorders.Horizontal + MultipleBorders.Vertical, GemBox.Spreadsheet.MultipleBorders), Drawing.Color.Black, LineStyle.Thin)
         ws.Cells(iLigneDebut, iColQualificationLibelle).SetBorders(CType(MultipleBorders.Horizontal + MultipleBorders.Vertical, GemBox.Spreadsheet.MultipleBorders), Drawing.Color.Black, LineStyle.Thin)
 
-        ' Parcours du dataset et remplissage du fichier Excel
+        ' Parcours du dataset et remplissage du fichier Excelmldkykmo
         With ds.Tables(0)
             For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
                 ws.Cells(i + iLigneDebut + 1, iColPrenom).Value = .Rows(i)("EmployePrenom")
