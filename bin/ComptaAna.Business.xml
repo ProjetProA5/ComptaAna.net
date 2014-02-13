@@ -1,0 +1,1297 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ComptaAna.Business
+</name>
+</assembly>
+<members>
+<member name="M:ComptaAna.Business.CClientDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iClientID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CClientDAO.GetAllClients">
+	<summary>
+ Récupère tous les clients
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.GetClientSiteByID(System.Int32)">
+	<summary>
+ Récupère les sites d'un client
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.GetClientById(System.Int32)">
+	<summary>
+ recuperer un client par son id
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.GetAllClientSiteByAffaireIdToListe(System.Int32,System.Int32)">
+	<summary>
+ recuperer tous les clients site par affaire id
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.GetAllClientToListe">
+	<summary>
+ recuperer tous les clients site par affaire id
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.InsertClient(ComptaAna.Business.CClient)">
+	<summary>
+ inserer un client
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.InsertClientSite(ComptaAna.Business.CClient)">
+	<summary>
+ Insérer un client site
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.UpdateClient(ComptaAna.Business.CClient)">
+	<summary>
+ Modification des informations d'un client
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.DeleteClient(ComptaAna.Business.CClient)">
+	<summary>
+ supprimer un client
+ </summary>
+</member><member name="M:ComptaAna.Business.CClientDAO.ClientExiste(System.String)">
+	<summary>
+ Indique si un client existe déjà ou non dans la base
+ </summary>
+	<param name="sNouveauClientNom"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CClientDAO.SiteExiste(System.Int32,System.String)">
+	<summary>
+ Indique si le nom de site passé en paramètre existe pour le client passé en paramètre
+ </summary>
+	<param name="iClientID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetFacturationAffaireByAffaireID(System.Int32)">
+	<summary>
+ Retourne un dataset contenant les factures associées a une affaire
+ </summary>
+	<param name="idAffaire">id de l'affaire concernee</param>
+	<returns>dataset</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetFacturationAffaireIDByRef(System.String)">
+	<summary>
+ Retourne l'ID de la facture correspondant à la référence
+ </summary>
+	<param name="sRef">référence de la facture</param>
+	<returns>integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetFacturationAffaireByFactureID(System.Int32)">
+	<summary>
+ Retourne un objet de type CFacturationAffaire correspondant a la facture dont l'id est passe en paramètre
+ </summary>
+	<param name="idFacture">id de la facture concernee</param>
+	<returns>CFacturationAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.InsererFacturationAffaire(ComptaAna.Business.CFacturationAffaire)">
+	<summary>
+ Insere un objet de type CFacturationAffaire
+ </summary>
+	<param name="oFacturationAffaire">l'objet de type CFacturationAffaire a inserer</param>
+	<returns>CFacturationAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.InsererAvoirAffaire(ComptaAna.Business.CFacturationAffaire)">
+	<summary>
+ Insere un objet de type CFacturationAffaire
+ </summary>
+	<param name="oFacturationAffaire">l'objet de type CFacturationAffaire a inserer</param>
+	<returns>CFacturationAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetMaxFacturationAffaireID">
+	<summary>
+ retourne l'ID correspondant a la derniere Facture inserée
+ </summary>
+	<returns>FacturationAffaireID</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.SupprimerFactureByID(System.Int32)">
+	<summary>
+ permet de supprimer une facture
+ </summary>
+	<param name="factureID">id de la facture a supprimer</param>
+	<returns>integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetMaxOuVideFactureRef(System.Int32)">
+	<summary>
+ Retourne la valeur de la dernière référence à attribuée ou de la première référence n'ayant pas de successeur.
+ (Evite les vides dans la liste des réferences)
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetPourcentageFacturation(System.Int32)">
+	<summary>
+ Retourne un dataSet contenant les étapes de facturation restantes à facturer de l'affaire iAffaireID
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.ValiderEtapeFactureDAO(System.Int32)">
+	<summary>
+ Met à jour la table AffaireEtapeFacture après création d'une facture
+ Met à 1 l'AffaireEtapeFactureValide pour spécifier que l'étape est facturée
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.SupprimerEtapeFacture(System.Int32)">
+	<summary>
+ Met à jour la table AffaireEtapeFacture après suppression d'une facture
+ Remet à 0 l'AffaireEtapeFactureValide pour spécifier que l'étape n'est plus facturée
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.GetAffaireEtapeFacturationByRef(System.String)">
+	<summary>
+ Retourne l'id de l'AffaireEtapeFacturation correspondant à la référence sRefFacture
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.FacturerProduits(System.Int32)">
+	<summary>
+ Met à 1 ProduitAffaireFacture dans ProduitAffaireAssocie pour spécifier que le produit est facturé
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.LierProduits(System.Int32,ComptaAna.Business.CFacturationAffaire)">
+	<summary>
+ Permet de lier les produits d'une affaire avec la facturation suivant la date de factu
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.SupprimerLienProduit(System.Int32)">
+	<summary>
+ Permet de supprimer le FacturationAffaireID de la table ProduitAffaire pour supprimer le lien entre le produit et la facturation
+ </summary>
+</member><member name="M:ComptaAna.Business.CFacturationAffaireDAO.SupprimerEtatProduitAffaireFacture(System.Int32)">
+	<summary>
+ Permet de remettre à 0 ProduitAffaireFacture dans ProduitAffaireAssocie pour spécifier que le produit n'est plus facturé
+ </summary>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.GetFactureAffaireByAffaireID(System.Int32)">
+	<summary>
+ Retourne un dataset contenant les factures associées a une affaire
+ </summary>
+	<param name="idAffaire">id de l'affaire concernee</param>
+	<returns>dataset</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.GetFactureAffaireByFactureID(System.Int32,System.Boolean)">
+	<summary>
+ Retourne un objet de type CFactureAffaire correspondant a la facture dont l'id est passe en paramètre
+ </summary>
+	<param name="idFacture">id de la facture concernee</param>
+	<returns>CFactureAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.InsererFactureAffaire(ComptaAna.Business.CFactureAffaire)">
+	<summary>
+ Insere un objet de type CFactureAffaire
+ </summary>
+	<param name="oFactureAffaire">l'objet de type CFactureAffaire a inserer</param>
+	<returns>CFactureAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.GetMaxFactureAffaireID">
+	<summary>
+ retourne un objet de type CFactureAffaire correspondant a la derniere Facture inserée
+ </summary>
+	<returns>CFactureAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.DeleteFacture(System.Int32)">
+	<summary>
+ permet de supprimer une facture
+ </summary>
+	<param name="factureID">id de la facture a supprimer</param>
+	<returns>integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.InsertFactureProduitManuel(ComptaAna.Business.CFactureProduit)">
+	<summary>
+ Inserer un produit manuellement
+ </summary>
+	<param name="oFactureProduit"></param>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.UpdateFactureAffaireType(System.Int32,System.Int32)">
+	<summary>
+ MAJ le type d'une facture
+ </summary>
+	<param name="idFactureAffaire"></param>
+</member><member name="M:ComptaAna.Business.CFactureAffaireDAO.GetProduitAffaireEditedByFactureID(System.Int32)">
+	<summary>
+ Recuperer les produits inserées par pourcentage ou manuellement inserées
+ </summary>
+	<param name="idFacture"></param>
+</member><member name="M:ComptaAna.Business.CParametresDAO.DateBase">
+	<summary>
+ Retourne la date de la dernière mise à jour de la base
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CQualificationDAO.InsertQualification(ComptaAna.Business.CQualification)">
+	<summary>
+Insert une Qualification
+</summary>
+	<param name="oQualification"> Une Qualification </param>
+	<returns> Entier </returns>
+</member><member name="M:ComptaAna.Business.CQualificationDAO.GetLastQualificationID">
+	<summary>
+Récupère l'id de la dernière qualification insérée.
+</summary>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CQualificationDAO.UpdateQualification(ComptaAna.Business.CQualification)">
+	<summary>
+Met à jour une qualification.
+</summary>
+	<param name="oQualification"> Une Qualification </param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CQualificationDAO.GetAllQualification">
+	<summary>
+ Permet de recuperer l'ensemble des Qualifications
+ </summary>
+	<returns>DataSet : Contenant les qualifications contenus dans la base</returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CQualificationDAO">
+	<summary>
+ Classe d'accès base de données Qualification
+ </summary>
+</member><member name="M:ComptaAna.Business.CFormationDAO.GetAllFormations">
+	<summary>
+ Retourne toutes les formations existantes
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CFormationDAO.GetSumFormationCoutParEmploye(System.String,System.String)">
+	<summary>
+ Retourne l'id, le nom collé au prenom et la somme des formations prévues par employé pour une période
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFormationDAO.GetFormationsEmploye(System.Int32)">
+	<summary>
+ Retourne toutes les formations pour un employé
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CFormationDAO.GetFormationEmployeParTypePeriode(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Retourne toutes les formations d'un employé suivant le type de formation dans une période donnée
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CFormationDAO.InsertFormation(ComptaAna.Business.CFormation)">
+	<summary>
+ Insère une formation Prévue (non associée à un produit du relevée d'activité
+ </summary>
+	<param name="oFormation"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CFormationDAO.DeleteFormation(System.Int32)">
+	<summary>
+ Supprimer une formation
+ </summary>
+</member><member name="M:ComptaAna.Business.CFormationDAO.InsertFormationAssocie(ComptaAna.Business.CFormation)">
+	<summary>
+ Inseère en base une formation venant du relevé d'activité (Associée à un produit)
+ </summary>
+	<param name="oFormation"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CEmploye">
+	<summary>
+ Classe métier CEmploye, permettant de créer et de récuperer les propriétés d'un objet
+ Employe
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CPrixQualifTypeAffaire">
+	<summary>
+ Classe métier PrixQualifTypeAffaire
+ </summary>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iAffaireID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.GetAllAffairetoList">
+	<summary>
+ Recupère toutes les affaires non terminee formaté pour une liste déroulante
+ </summary>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.GetAffaire(System.Int32)">
+	<summary>
+ Retourne un dataset contenant l'objet Affaire dont l'id est passe en parametre
+ </summary>
+	<param name="AffaireID"> l'id de l'affaire concernee</param>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.GetListeQualif(System.Int32)">
+	<summary>
+ Retourne un dataset contenant les Qualifications qui ne sont pas dans l'Affaire dont l'id est passe en parametre
+ </summary>
+	<param name="id">l'id de l'affaire concernee</param>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.UpdateAffaire(ComptaAna.Business.CAffaire)">
+	<summary>
+ Met a jour une affaire dans la base
+ </summary>
+	<param name="oAffaire">l'objet de type CAffaire a modifier</param>
+	<returns>Integer</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.InsererAffaire(ComptaAna.Business.CAffaire)">
+	<summary>
+ Insere une affaire dans la base de donnes
+ </summary>
+	<param name="oAffaire">l'objet de type CAffaire a inserer</param>
+	<returns>Integer</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.GetMaxAffaireID">
+	<summary>
+ recupere la derniere affaire creee
+ </summary>
+	<returns>CAffaire : un objet de type CAffaire</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.GetAffaireTypeByAffaireID(System.Int32)">
+	<summary>
+ Retourne le type de l'affaire par son id
+ </summary>
+	<returns>Integer</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.GetAffaireBudgetByAffaireID(System.Int32)">
+	<summary>
+ Retourne le budget de l'affaire par son id
+ </summary>
+	<returns>Integer</returns>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.DeleteAffaire(System.Int32)">
+	<summary>
+ Supprimer une affaire sans produit
+ </summary>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.DeleteSouSffaire(System.Int32)">
+	<summary>
+ Supprimer une affaire sans produit
+ </summary>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.VerifSousAffaire(System.Int32)">
+	<summary>
+ verifier si l'affaire passee en parametre est une sous affaire
+ </summary>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.UpdateSommeProduitsAll">
+	<summary>
+ Met à jour le champ calculé AffaireSommeProduits de la table Affaire, pour toutes les affaires
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.UpdateSommeProduitsParAffaire(System.Int32)">
+	<summary>
+ Met à jour le champ calculé AffaireSommeProduits de la table Affaire, pour l'affaire passée en paramètre
+ </summary>
+	<param name="iAffaireId"></param>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.UpdateProduitsDepassement(System.Int32)">
+	<summary>
+ En fonction du nouveau budget d'une affaire, et des prestations rentrées, on actualise tous les produits
+ Si les prestations sont inférieures ou égales au budget, alors tous les produits ont la colonne ProduitAffaireDepassementMnt vide,
+ Sinon, le dernier produit entré a pour valeur le dépassement total (colonne ProduitAffaireDepassementMnt) --&gt; attente confirmation par DL
+ </summary>
+	<param name="iAffaireId"></param>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.EstAffaireEnDepassement(System.Int32)">
+	<summary>
+ Indique si une affaire est en dépassement
+ </summary>
+	<param name="iAffaireId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.MontantDepassement(System.Int32)">
+	<summary>
+ Renvoit le montant d'une affaire en dépassement
+ </summary>
+	<param name="iAffaireId"></param>
+	<returns></returns>
+	<remarks>Renvoit une valeur négative si l'affaire n'est pas en dépassement</remarks>
+</member><member name="M:ComptaAna.Business.CAffaireDAO.EstSousAffaire(System.Int32)">
+	<summary>
+ Indique si l'affaire passée en paramètre est une sous-affaire ou non
+ </summary>
+	<param name="iAffaireID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CAffaireDAO">
+	<summary>
+ Classe d'acces a la base de donnees Affaire
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CService">
+	<summary>
+ Classe métier Service
+ </summary>
+</member><member name="M:ComptaAna.Business.CAffaireEtapeFactureDAO.GetAffaireEtapeFacturePourcentageNonNull(System.Int32)">
+	<summary>
+ Retourne un dataset contenant l'avancement et la validité de l'etape de facturation
+ de l'affaire non null dont l'id est passe en prametre
+ </summary>
+	<param name="idAffaire">id de l'affaire concernee</param>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CAffaireEtapeFactureDAO.GetAffaireEtapeFacturePourcentage(System.Int32)">
+	<summary>
+ Retourne un dataset contenant l'avancement et la validité de l'etape de facturation
+ de l'affaire dont l'id est passe en prametre
+ </summary>
+	<param name="idAffaire">id de l'affaire concernee</param>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CAffaireEtapeFactureDAO.UpdateEtapeFactPourcentage(System.Int32,System.Boolean,System.Int32)">
+	<summary>
+ Valide les etapes de facturation
+ </summary>
+	<param name="idAffaireEtapeFacture"></param>
+	<param name="validation"></param>
+	<param name="pourcentage"></param>
+	<returns>Integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireEtapeFactureDAO.IsAffaireFactureMois(System.Int64,System.Int32)">
+	<summary>
+ Indique si pour une affaire donnée, le mois est coché ou non dans les étapes de facturation
+ </summary>
+	<param name="lAffaireId"></param>
+	<param name="iMois"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireEtapeFactureDAO.UpdateEtapeFactureMois(System.Int64,System.Int32,System.Boolean)">
+	<summary>
+ Pour une affaire et un mois donnés, on met à jour la ligne dans la base avec la bonne valeur (validé ou non)
+ Dans le cas où la ligne n'existait pas en base, on l'ajoute
+ </summary>
+	<param name="lAffaireId"></param>
+	<param name="iMois"></param>
+	<param name="bValide"></param>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CAffaireEtapeFactureDAO">
+	<summary>
+ Classe d'acces a la base de donnees AffaireEtapeFacture
+ </summary>
+</member><member name="M:ComptaAna.Business.CTypeAffaireDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iTypeAffaireID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CTypeAffaireDAO.LoadAll(System.String,System.String)">
+	<summary>
+ Charge un ensemble d'enregistrements à partir d'un filtre et selon un critère de tri
+ </summary>
+	<param name="sFiltre"></param>
+	<param name="sTri"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CTypeAffaireDAO.GetTypeAffaireByID(System.Int32)">
+	<summary>
+ Retourne un objet de type CTypeAffaire contenant le type de l'affaire dont l'id est passé en parametre
+ </summary>
+	<param name="TypeAffaireID">id de l'affaire concernee</param>
+	<returns>CTypeAffaire</returns>
+</member><member name="M:ComptaAna.Business.CTypeAffaireDAO.GetAllTypeAffaire(System.Boolean)">
+	<summary>
+ Retourne un dataset contenant les libelles de type d'affaire et leurs id 
+ </summary>
+	<returns>DataSet</returns>
+</member><member name="T:ComptaAna.Business.CTypeAffaireDAO">
+	<summary>
+ Classe d'acces a la base de donnees TypeAffaire
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CPoste">
+	<summary>
+ Classe métier Poste
+ </summary>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iProduitAffaireID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetAllProduitAffaireEmployeIDAndDate(System.Boolean,System.Int32,System.DateTime,System.DateTime,System.Int32)">
+	<summary>
+ Recupere tout les produits associe ou non a une affaire par date et par employé
+ </summary>
+	<param name="associe">si l'affaire est associé ou non</param>
+	<param name="iEmployeID">l'id de l'employé</param>
+	<param name="dDateDebut">date de début</param>
+	<param name="dDateFin">date de fin</param>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.SupprimerProduitAffaire(System.Int32)">
+	<summary>
+ Permet de supprimer un produitaffaire dans la base de données
+ </summary>
+	<param name="iProduitAffaireID">Integer : l'id d'un produitaffaire existant dans la base</param>
+	<returns>Integer : 1 si s'est correctement passee, 0 sinon</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.InsertProduitAffaireNonAssocie(ComptaAna.Business.CProduitAffaire)">
+	<summary>
+ Insert un nouveau produit non associe a une affaire
+ </summary>
+	<param name="oProduitAffaire"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.EqualOne(System.Int32,System.String,System.Decimal,System.Int32,System.Boolean,System.Int32)">
+	<summary>
+ test si la quantité pour une journée n'excede pas 1
+ </summary>
+	<param name="iEmployeID">l'id de l'employé</param>
+	<param name="sDate">une date</param>
+	<param name="qte">une quantité entre 0 et 1 avec 3 décimals possibles</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireAssocieByAffaireID(System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+	<summary>
+ Retourne un dataset contenant des elements concernant un ProduitAffaire en fonction d'une affaire
+ </summary>
+	<param name="AffaireID">id de l'affaire concernee</param>
+	<returns>dataset</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireSelectedByFactureID(System.Int32)">
+	<summary>
+ Retourne un dataset contenant des elements concernant un ProduitAffaire en fonction d'une facture
+ </summary>
+	<param name="idFacture">id de la facture concernee</param>
+	<returns>dataset</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.InsertProduitAffaireAssocie(ComptaAna.Business.CProduitAffaireAssocie)">
+	<summary>
+ Insert un produit associe a une affaire
+ </summary>
+	<param name="oProduitAffaireAssocie"> CproduitAffaireAssocie</param>
+	<returns> Integer </returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireAssocieByAffaireIDetDateFacture(System.Int32,System.DateTime)">
+	<summary>
+ Retourne un dataset contenant les produits non associés a une facture
+ concernant une affaire dont l'id est passé en paramètre et dont la date est inférieure a la date passée en parametre
+ </summary>
+	<param name="AffaireID">id de l'affaire concernee</param>
+	<param name="dateFacture">date de la facture</param>
+	<returns>dataset</returns>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.UpdateProduitAffaireFactureId(System.Int32,System.Int32)">
+	<summary>
+ Met a jour le champ FactureAffaireID d'un produit associé à une affaire
+ </summary>
+	<param name="factureId">id de la facture associée</param>
+	<param name="produitId">id du produit a mettre a jour</param>
+	<returns>integer</returns>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireAssocieBudget(System.Int32,System.Int32)">
+	<summary>
+ Retourne la somme des produits associés a l'affaire dont l'id est passé en paramètre
+ et qui entrent dans le budget de l'affaire
+ </summary>
+	<param name="AffaireID">id de l'affaire concernee</param>
+	<returns>integer</returns>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireFrais(System.Int32)">
+	<summary>
+ Retourne la somme des frais d'une affaire dont l'id est passé en paramètre
+ </summary>
+	<param name="AffaireID">id de l'affaire concernee</param>
+	<returns>integer</returns>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireNbJours(System.Int32)">
+	<summary>
+ Retourne la somme du nombre de jours passés pour l'affaire dont l'id est passé en paramètre
+ c'est a dire la quantité de chanque produitAffaire qui entre dans la composition du budget
+ </summary>
+	<param name="AffaireID">id de l'affaire concernee</param>
+	<returns>integer</returns>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetMultiplicationQuantiteMontant(System.Int32)">
+	<summary>
+ Renvoit le résultat de la multiplication entre la quantité et le montant HT pour un produit donné
+ </summary>
+	<param name="iProduitAffaireId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetAffaireIdFromProduitAffaireId(System.Int32)">
+	<summary>
+ A partir du ProduitAffaireId, renvoit l'AffaireId
+ </summary>
+	<param name="iProduitAffaireId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.LoadAllProduitAffaire(System.Int32)">
+	<summary>
+ Charge une ligne de la table ProduitAffaireAssocie, à partir du ProduitAffaireID
+ </summary>
+	<param name="iProduitAffaireId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetProduitAffaireExcel(System.Int32,System.Int32,System.Int32,System.String,System.String,System.Boolean)">
+	<summary>
+ Renvoit un dataset pour l'export Excel des produits de l'affaire passée en paramètre
+ </summary>
+	<param name="iAffaireID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitAffaireDAO.GetDateSaisies(System.DateTime,System.DateTime,System.Int32)">
+	<summary>
+ Renvoit un dataset qui correspond aux jours partiellement ou totalement saisis (donc la date) et la quantité associée a ce jour
+ </summary>
+	<param name="idEmploye"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CProduitAffaireDAO">
+	<summary>
+ Classe d'acces a la table ProduitAffaire dans la base de donnees
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CTVADAO.GetAllTva">
+	<summary>
+Récupère toutes les TVA.
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CTVADAO.InsertTva(ComptaAna.Business.CTVA)">
+	<summary>
+Insert une TVA.
+</summary>
+	<param name="oTVA">Une Tva</param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CTVADAO.GetAllTvaActif">
+	<summary>
+ recupere toute les Tva actives
+ </summary>
+	<returns> dataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CTVADAO.UpdateTva(ComptaAna.Business.CTVA)">
+	<summary>
+Met à jour une Tva.
+</summary>
+	<param name="oTVA"> Une Tva</param>
+	<returns>Entier</returns>
+</member><member name="T:ComptaAna.Business.CTVADAO">
+	<summary>
+ Classe d'accès base de données TVA
+ </summary>
+</member><member name="P:ComptaAna.Business.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ComptaAna.Business.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ComptaAna.Business.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:ComptaAna.Business.CAffaireQualificationDAO.InsertAffaireQualif(System.Int32,System.Int32,System.String,System.String)">
+	<summary>
+ insere une qualification correspondant a une affaire
+ </summary>
+	<param name="AffaireID">affaire concernee</param>
+	<param name="QualificationID">qualification concernee</param>
+	<param name="QualifMntUnitHT">montant unitaire</param>
+	<param name="QualifNbJours">nombre de jours</param>
+	<returns>Integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireQualificationDAO.GetAffaireQualification(System.Int32)">
+	<summary>
+ Retourne un dataset contenant le libelle, le montant unitaire et le nombre de jours des qualifications
+ de l'affaire dont l'id est passe en parametre
+ </summary>
+	<param name="id">id de l'affaire concernee</param>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CAffaireQualificationDAO.UpdateAffaireQualification(ComptaAna.Business.CAffaireQualification)">
+	<summary>
+ Insere un objet de type CAffaireQualification dans la BDD
+ </summary>
+	<param name="oAffaireQualification">l'objet de type CAffaireQualification a modifier</param>
+	<returns>integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CAffaireQualificationDAO.DeleteAffaireQualification(System.Int32)">
+	<summary>
+ permet de supprimer une Affaire qualification
+ </summary>
+	<param name="qualificationID">id de la qualification a supprimer</param>
+	<returns>integer</returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CAffaireQualificationDAO">
+	<summary>
+ Classe d'acces a la base de donnees AffaireQualification
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CFiliale">
+	<summary>
+ Classe métier Filiale
+ </summary>
+</member><member name="T:ComptaAna.Business.CTypeProduit">
+	<summary>
+ Classe métier TypeProduit
+ </summary>
+</member><member name="M:ComptaAna.Business.CPrixQualifTypeAffaireDAO.GetAllPrixQualifTypeAffaire">
+	<summary>
+Recupere les prix par défaut pour une qualification et un type d'affaire donnés. 
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CPrixQualifTypeAffaireDAO.InsertPrixQualifTypeAffaire(ComptaAna.Business.CPrixQualifTypeAffaire)">
+	<summary>
+Insert un prix pour une qualification et un type d'affaire donnés.
+</summary>
+	<param name="oPrixQualifTypeAffaire"> Une prix avec sa qualification et son type d'affaire </param>
+</member><member name="M:ComptaAna.Business.CPrixQualifTypeAffaireDAO.UpdatePrixQualifTypeAffaire(ComptaAna.Business.CPrixQualifTypeAffaire)">
+	<summary>
+Met à jour un prix pour une qualification et un type d'affaire donnés.
+</summary>
+	<param name="oPrixQualifTypeAffaire"> Une prix avec sa qualification et son type d'affaire </param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CPrixQualifTypeAffaireDAO.GetPrixHTQualifTypeAffaire(System.Int32@,System.Int32@)">
+	<summary>
+ recupere le prix HT en fonction d'une qualification et du type d'affaire
+ </summary>
+	<param name="idQualif">qualification concernee</param>
+	<param name="idTypeAffaire">typeAffaire conerne</param>
+	<returns>un objet de type CPrixQualifTypeAffaire</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CPrixQualifTypeAffaireDAO.GetPrixHTQualifAffaire(System.Int64,System.Int64,System.Int64)">
+	<summary>
+ Renvoit le prix pour une affaire et une qualification. Si ce prix n'est pas défini pour l'affaire et la qualification en question,
+ alors on utilise le prix utilisé dans la gestion des prix par qualification (table PrixQualifTypeAffaire)
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CPrixQualifTypeAffaireDAO">
+	<summary>
+ Classe d'accès base de données PrixQualifTypeAffaire
+ </summary>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetAllService">
+	<summary>
+Récupere tous les services.
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetAllServiceToList">
+	<summary>
+ Recupere tout les services actifs formatés pour une liste
+ </summary>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetAllServiceMasseSalariale">
+	<summary>
+ Recupere tout les services actifs formatés sauf le service Administratif
+ </summary>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetAllServiceCAService(System.Collections.Generic.List{System.String})">
+	<summary>
+ Recupere tout les services actifs formatés sauf le service Administratif
+ </summary>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetAllServiceToListGraph(System.Collections.Generic.List{System.String})">
+	<summary>
+ Recupere tout les services actifs formatés pour une liste
+ </summary>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetAllServiceActif">
+	<summary>
+ Retourne un dataset contenant la liste des services actifs
+ </summary>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CServiceDAO.GetServiceById(System.Int32)">
+	<summary>
+ Recupere un service via son ID
+ </summary>
+	<param name="ServiceID"></param>
+	<returns>objet de type CService</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CServiceDAO.UpdateService(ComptaAna.Business.CService)">
+	<summary>
+Met à jour un service.
+</summary>
+	<param name="oService"> Un Service </param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CServiceDAO.InsertService(ComptaAna.Business.CService)">
+	<summary>
+Insère un service.
+</summary>
+	<param name="oService"> Un Service </param>
+</member><member name="M:ComptaAna.Business.CServiceDAO.getServiceAndRepartition(System.Int32)">
+	<summary>
+ Permet de récuperer la répartition des services pour un EmployeCout donné
+ </summary>
+	<param name="idEmployeCout">id du cout d'un employe</param>
+	<returns>DataSet : contenant ServiceID, ServiceLibelle, Repartition, ServiceActif, EmployeID</returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CServiceDAO">
+	<summary>
+ Classe d'accès base de données Service
+ </summary>
+</member><member name="T:ComptaAna.Business.CTVA">
+	<summary>
+ Classe métier Tva
+ </summary>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iEmployeID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.isGoodLogin(System.String,System.String)">
+	<summary>
+ Permet de tester si le couple login / mot de passe est valide
+ </summary>
+	<param name="Login">Login de l'utilisateur</param>
+	<param name="password">Mot de passe de l'utilisateur</param>
+	<returns>Booleen</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.getEmployeId(System.String,System.String)">
+	<summary>
+ Permet de récuperer l'id de l'employe à partir de son login et de son password
+ </summary>
+	<param name="Login">String Login</param>
+	<param name="password">String password</param>
+	<returns>DataSet contenant l'id de l'employé</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.getEmployeProfil(System.Int32)">
+	<summary>
+ Permet de récuperer le profil de l'employe 
+ </summary>
+	<param name="id">Integer : id de l'utilisateur</param>
+	<returns>DataSet contenant l'id du profil de l'utilisateur</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetAllEmploye">
+	<summary>
+ Retourne l'id, le nom et le mot de passe de l'ensemble des employés présents dans
+ la base de données
+ </summary>
+	<returns>DataSet : Contenant la liste des Employe</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetAllEmployeToList">
+	<summary>
+ Permet de récuperer un dataSet avec la liste des employés pour le relevé d'activité
+ </summary>
+	<returns>Dataset contenant : ID | NomPrenom</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetNomPrenomEmploye">
+	<summary>
+ Retourne l'id, le nom et le mot de passe de l'ensemble des employés présents dans
+ la base de données
+ </summary>
+	<returns>DataSet : Contenant la liste des Employe</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetNomPrenomEmployeGraph(System.Collections.Generic.List{System.String})">
+	<summary>
+ Retourne l'id, le nom et le mot de passe de l'ensemble des employés présents dans
+ la base de données
+ </summary>
+	<returns>DataSet : Contenant la liste des Employe</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetNomPrenomEmploye(System.Int32)">
+	<summary>
+ Retourne l'id, le nom et le mot de passe de l'ensemble des employés présents dans
+ la base de données
+ </summary>
+	<returns>DataSet : Contenant la liste des Employe</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetNomPrenomEmployeActif">
+	<summary>
+ Retourne l'id, le nom et le mot de passe de l'ensemble des employés actifs présents dans
+ la base de données
+ </summary>
+	<returns>DataSet : Contenant la liste des Employe</returns>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.InsererEmploye(ComptaAna.Business.CEmploye)">
+	<summary>
+ Permet d'inserer un employe dans la base de données
+ </summary>
+	<param name="oEmploye">CEmploye : un objet de type CEmploye</param>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.ModifierEmploye(ComptaAna.Business.CEmploye)">
+	<summary>
+ Effectue la requête qui permet de modifier un employé dans la base de données
+ </summary>
+	<param name="oEmploye">CEmploye : un objet de type CEmploye</param>
+	<returns>Integer : 1 si l'employe a été modifié, 0 sinon</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.SupprimerEmployeAvecId(System.Int32)">
+	<summary>
+ Permet de supprimer un employe dans la base de données
+ </summary>
+	<param name="iEmployeID">Integer : l'id d'un employe existant dans la base</param>
+	<returns>Integer : 1 si suppression effectuée avec succes, 0 sinon</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetEmployeById(System.Int32)">
+	<summary>
+ Permet de récuperer un Employe à partir de son ID
+ </summary>
+	<param name="idEmploye">Integer : l'id d'un employe present dans la base de données</param>
+	<returns>CEmploye : un objet de type CEmploye avec tous les attributs
+ si l'employe éxisté dans la base, un objet null sinon.</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.getEmployeFromLoginAndPassword(System.String,System.String)">
+	<summary>
+ Permet de récuperer un objet CEmploye si le couple login/password est valide
+ </summary>
+	<param name="Login">String : Login de l'employe</param>
+	<param name="password">String : mot de passe de l'employe</param>
+	<returns>CEmploye : un objet de type CEmploye</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.RechercherEmploye(System.String)">
+	<summary>
+ Permet de rechercher un employe à partir d'une chaine de caractere 
+ La recherche se fait soit sur le prenom soit le sur le nom
+ </summary>
+	<param name="employeNom">String :  représentant la chaine à rechercher</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.InsererEmployeCout(ComptaAna.Business.CEmployeCout)">
+	<summary>
+ Permet d'inserer un objet représentant le cout d'un employé dans la base de données
+ </summary>
+	<param name="oEmployeCout">CEmploye : un objet de type CEmploye</param>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.UpdateEmployeCoutDateFin(System.Int32,System.String)">
+	<summary>
+ Permet d'inserer la date de fin de la période d'un cout d'un employé dans la base de données
+ </summary>
+	<param name="dateFin">dateFin : la date de fin de la période d'un cout d'un employé</param>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.UpdateEmployeCoutDateFinSansVerif(System.Int32,System.String)">
+	<summary>
+ Permet d'inserer la date de fin de la période d'un cout d'un employé dans la base de données
+ </summary>
+	<param name="dateFin">dateFin : la date de fin de la période d'un cout d'un employé</param>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.ModifierEmployeCout(ComptaAna.Business.CEmployeCout)">
+	<summary>
+ Permet de modifier le cout d'un employé dans la base données
+ </summary>
+	<param name="oEmployeCout">oEmployeCout : un objet de type CEmployeCout</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.getIdDernierEmployeCoutInserer">
+	<summary>
+ Permet de récuperé l'id du dernier employé cout inseré dans la base
+ </summary>
+	<returns>Integer : id du derniser employeCoutInsere</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.getEmployeCoutById(System.Int32)">
+	<summary>
+ Retourne un objet CEmployeCout à partir d'un idEmploye
+ </summary>
+	<returns>CEmployeCout : un employeCout</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.testSiEmployeACout(System.Int32)">
+	<summary>
+ Permet de savoir si l'employe passé en paramètre à un Cout dans la base
+ </summary>
+	<param name="idEmploye">Integer : L'id d'un employé</param>
+	<returns>Boolean, true si l'employé à un cout false sinon</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.modifierEmployeRepartition(System.Int32,System.Int32,System.Decimal)">
+	<summary>
+ Permet de modifier la répartition des filiales 
+ </summary>
+	<param name="idFiliale">Integer : id de la filiale concernée</param>
+	<param name="idEmployeCout">Integer : id du cout de l'employé</param>
+	<param name="repartition">Integer : valeur de la répartition alouée à ce service</param>
+	<returns>Integer : resultat de la requete</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.insererEmployeRepartition(System.Int32,System.Int32,System.Decimal)">
+	<summary>
+ Permet d'inserer la repartition d'une filiale pour un employe cout donne
+ </summary>
+	<param name="idFiliale">Integer : id de la filiale concernée</param>
+	<param name="idEmployeCout">Integer : id du cout de l'employé</param>
+	<param name="repartition">Integer : valeur de la répartition alouée à ce service</param>
+	<returns>Integer : resultat de la requete</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.modifierEmployeRepartitionService(System.Int32,System.Int32,System.Decimal)">
+	<summary>
+ Permet de modifier la repartition du service pour l'employe cout passe en parametre
+ </summary>
+	<param name="iServiceID">Integer : id du service concerne</param>
+	<param name="idEmployeCout">Integer : id du cout de l'employe</param>
+	<param name="repartition">Integer : valeur de la répartition alouée à ce service</param>
+	<returns>Integer : resultat de la requete</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.insererEmployeRepartitionService(System.Int32,System.Int32,System.Decimal)">
+	<summary>
+ Permet d'inserer la repartition pour un service et un employeCout
+ </summary>
+	<param name="iServiceID">Integer : id du service concerne</param>
+	<param name="iEmployeCoutID">Integer : id du cout de l'employe concerne</param>
+	<param name="repartition">Integer : valeur de la repartition</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.GetNomPrenomFromId(System.Int64)">
+	<summary>
+ Renvoit le nom et le prénom séparé par un espace, à partir d'un EmployeId
+ </summary>
+	<param name="lEmployeId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.SupprimerCoutEmployeAvecId(System.Int32)">
+	<summary>
+ Permet de supprimer un cout employe dans la base de données
+ </summary>
+	<param name="iEmployeCoutID">Integer : l'id du cout employe existant dans la base</param>
+	<returns>Boolean : indique si la suppresion a été réalisée</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeDAO.CompareStringDate(System.String,System.String)">
+	<summary>
+ Permet de comparer une date sql récuperer sous forme de String et de savoir si elle est inférieure à une autre date sous forme de string 
+ </summary>
+	<param name="sDateDebut">date sql récuperer sous forme de String</param>
+	<param name="sDateFin">String</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CEmployeDAO">
+	<summary>
+ Classe contenant les méthodes relatives aux accès à la base de données pour l'objet Employe
+ et concernant les actions relatives aux employés
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployeModuleDAO.GetDroitsEmploye(System.Int32)">
+	<summary>
+	</summary>
+	<returns>DataSet</returns>
+</member><member name="T:ComptaAna.Business.CEmployeModuleDAO">
+	<summary>
+ Classe d'accès base de données EmployeModule
+ </summary>
+</member><member name="M:ComptaAna.Business.CConnexion.Close">
+	<summary>
+ Ferme la connection
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.GetConnexion">
+	<summary>
+ Recupere une connection
+ </summary>
+	<returns> SqlConnection </returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.ExecuteQuery(System.String)">
+	<summary>
+ Execute une requete de type SELECT
+ </summary>
+	<param name="requete">requete a executer</param>
+	<returns>dataSet</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.ExecuteQuery_WindowsApp(System.String)">
+	<summary>
+ Execute une requête de type SELECT, pour une application Windows (ComptaAna.Tools)
+ </summary>
+	<param name="requete"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.ExecuteUpdate(System.String)">
+	<summary>
+ Execute une requete de type UPDATE, DELETE
+ </summary>
+	<param name="requete">Requete a executer</param>
+	<returns> integer </returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.ExecuteUpdate_WindowsApp(System.String)">
+	<summary>
+ Execute une requete de type UPDATE, DELETE, pour une application Windows (ComptaAna.Tools)
+ </summary>
+	<param name="requete">Requete a executer</param>
+	<returns> integer </returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.ExecuteScalar(System.String)">
+	<summary>
+ Execute une  requete de type select count.
+ </summary>
+	<param name="requete"> requete a executer</param>
+	<returns> integer</returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CConnexion.convertDataReaderToDataSet(System.Data.SqlClient.SqlDataReader)">
+	<summary>
+ Convertir un dataReader en dataSet
+ </summary>
+	<param name="reader"> SqlDataReader </param>
+	<returns> DataSet </returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CEmployePrimeDAO.GetPrimeEmploye(System.Int32)">
+	<summary>
+	</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CFilialeDAO.GetAllFiliale">
+	<summary>
+Récupère toute les Filiales. Renvoie un dataSet avec l'id et le nom des filiales.
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CFilialeDAO.GetAllFilialeActive">
+	<summary>
+Récupère toute les Filiales actives. Renvoie un dataSet avec l'id et le nom des filiales.
+</summary>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CFilialeDAO.InsertFiliale(ComptaAna.Business.CFiliale)">
+	<summary>
+Insert une filiale
+</summary>
+	<param name="oFiliale"> Une Filiale</param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CFilialeDAO.UpdateFiliale(ComptaAna.Business.CFiliale)">
+	<summary>
+Met à jour une filiale
+</summary>
+	<param name="oFiliale"> Une Filiale</param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CFilialeDAO.getFilialeAndRepartition(System.Int32)">
+	<summary>
+ Permet de récuperer la répartition des filiales pour un EmployeCout donné
+ </summary>
+	<param name="EmployeIdCout">id du cout d'un employe</param>
+	<returns>DataSet : contenant Filiale, FilialeNom, Repartition, FilialeActif, EmployeID</returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CFilialeDAO">
+	<summary>
+ Classe accès base de données Filiale
+ </summary>
+</member><member name="M:ComptaAna.Business.CProfilDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iProfilID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProfilDAO.LoadAll(System.String,System.String)">
+	<summary>
+ Charge un ensemble d'enregistrements à partir d'un filtre et selon un critère de tri
+ </summary>
+	<param name="sFiltre"></param>
+	<param name="sTri"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iProduitID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CProduitDAO.GetProduit(System.Int32)">
+	<summary>
+ Retourne un dataset contenant l'objet Produit dont l'id est passe en parametre
+ </summary>
+	<param name="iProduitID"> l'id du produit concerne </param>
+	<returns>DataSet</returns>
+</member><member name="M:ComptaAna.Business.CProduitDAO.SupprimerProduit(System.Int32)">
+	<summary>
+ Supprime un produit dont l'id est passe en parametre
+ </summary>
+	<param name="iProduitID"> l'id du produit concerne </param>
+	<returns>Integer : 0 si le produit est supprime, 1 sinon</returns>
+</member><member name="M:ComptaAna.Business.CProduitDAO.ModifierProduit(ComptaAna.Business.CProduit)">
+	<summary>
+ Met a jour un produit dont l'id est passe en parametre
+ </summary>
+	<param name="oProduit">l'objet produit</param>
+	<returns>Integer : 1 si le produit est modifie, 0 sinon</returns>
+</member><member name="M:ComptaAna.Business.CProduitDAO.InsererProduit(ComptaAna.Business.CProduit)">
+	<summary>
+ Met a jour un produit dont l'id est passe en parametre
+ </summary>
+	<param name="oProduit"> l'objet produit </param>
+	<returns>Integer : 1 si le produit est insere, 0 sinon</returns>
+</member><member name="M:ComptaAna.Business.CProduitDAO.ProduitExiste(System.Int32)">
+	<summary>
+ Verifie si un produit est present dans la BDD
+ </summary>
+	<param name="iProduitID"> l'id du produit concerne </param>
+	<returns>Boolean : Retourne true si le produit est present, false sinon</returns>
+</member><member name="M:ComptaAna.Business.CProduitDAO.GetAllProduitByTypeProduitID(System.Int32)">
+	<summary>
+ Retourne tous les produits attaches a un type de produit
+ </summary>
+	<param name="iTypeProduitID"> l'id du type de produit concerne </param>
+	<returns>Dataset</returns>
+</member><member name="T:ComptaAna.Business.CProduitDAO">
+	<summary>
+ Classe d'acces a la table Produit dans la base de donnees
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CQualification">
+	<summary>
+ Classe métier Qualification
+ </summary>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.SelectStatGeneralesParService(System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.String)">
+	<summary>
+ Selectionne les statistiques generales par services
+ </summary>
+	<returns>dataset</returns>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.SelectStatEmployeService(System.DateTime,System.DateTime,System.Int32,System.Int32)">
+	<summary>
+ Selectionne les statistiques sur les employes par service
+ </summary>
+	<returns>dataset</returns>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.SelectStatTypeProduit(System.DateTime,System.DateTime,System.Int32,System.Boolean)">
+	<summary>
+ Selectionne les statistiques sur les charges externes et les produits
+ </summary>
+	<returns>dataset</returns>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.NbJoursOuvres(System.DateTime,System.DateTime)">
+	<summary>
+ Determine le nombre de jours ouvres entre 2 dates
+ Elle ne prend donc pas en compte le samedi ou le dimanche
+ </summary>
+	<param name="dDateDeb">la date de debut de la periode concernee</param>
+	<param name="dDateFin">la date de fin de la periode concernee</param>
+	<returns name="iJoursOuvres">nombre de jours ouvres de la periode</returns>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.GetCAHTParEmploye(System.DateTime,System.DateTime)">
+	<summary>
+ Renvoit un hashtable de correspondance (EmployeId, CAHT associé)
+ </summary>
+	<param name="dDateDebut"></param>
+	<param name="dDateFin"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.getAllEmployeWithProduitID(System.Int32,System.String,System.String)">
+	<summary>
+ Permet de recuperer un dataset qui corresponde aux employés qui ont rentré un typeproduit de ce genre pour une période precise
+ </summary>
+	<param name="iProduitID"></param>
+	<param name="dDateDebut"></param>
+	<param name="dDateFin"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CStatistiquesDAO.SelectStatGeneralesParServiceGraphe(System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Collections.Generic.List{System.String})">
+	<summary>
+ Selectionne les statistiques generales par services
+ </summary>
+	<returns>dataset</returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.LoadOne(System.Int32)">
+	<summary>
+ Charge un enregistrement à partir de la clé primaire
+ </summary>
+	<param name="iTypeProduitID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.GetAllTypeProduit">
+	<summary>
+Récupère tous les types de produits.
+</summary>
+	<returns> DataSet </returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.GetAllTypeProduitFiltreParAssociation(System.Boolean)">
+	<summary>
+Récupère tous les types de produits.
+</summary>
+	<returns> DataSet </returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.GetTypeProduitInCA">
+	<summary>
+ Récupère tous les types de produits qui sont compris dans le calcul du CA
+ c'est a dire tous les types sauf : conges, maladie et feries
+</summary>
+	<returns> DataSet </returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.UpdateTypeProduit(ComptaAna.Business.CTypeProduit)">
+	<summary>
+Met à jour un type de produit.
+</summary>
+	<param name="oTypeProduit"> Une type de Produit </param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.DeleteTypeProduit(System.Int32)">
+	<summary>
+Supprime un type de produit.
+</summary>
+	<param name="iTypeProduitID"> L'id du type de produit a supprimer</param>
+	<returns> Entier </returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.InsertTypeProduit(ComptaAna.Business.CTypeProduit)">
+	<summary>
+Insert un type de produit.
+</summary>
+	<param name="oTypeProduit"> Un type de produit </param>
+	<returns>Entier</returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.GetCaracTypeProduit(System.Int32)">
+	<summary>
+Retourne les caracteritiques d'un type de produit a partir de son id
+</summary>
+	<param name="iTypeProduitID"> l'id d'un type de produit </param>
+	<returns>ctypeproduit</returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.GetTypeProduitRelieProduit">
+	<summary>
+Récupère tous les types de produits relies a un produit seulement
+</summary>
+	<returns> DataSet </returns>
+</member><member name="M:ComptaAna.Business.CTypeProduitDAO.GetTypeProduitPrestation(System.Int32)">
+	<summary>
+ Indique si un type de produit est une prestation.
+ Par exemple, les outils, les frais ne sont pas des prestations
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ComptaAna.Business.CTypeProduitDAO">
+	<summary>
+ Classe d'accès base de données TypeProduit 
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
